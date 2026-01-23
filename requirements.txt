@@ -1,0 +1,40 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database
+sqlalchemy
+alembic
+psycopg2-binary  # PostgreSQL driver
+
+# ML & Data Processing
+scikit-learn
+pandas
+numpy
+joblib
+
+# ML Explainability
+shap
+
+# Validation
+pydantic
+pydantic-settings
+
+# Background Jobs
+celery  # Optional: for production-grade job queue
+redis  # Optional: for Celery broker
+
+# Utilities
+python-dotenv
+python-dateutil
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+
+# Development
+black
+flake8
+mypy
