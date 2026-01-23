@@ -5,7 +5,8 @@ Demonstrates: RESTful design, async processing, proper error handling
 
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, BackgroundTasks, Query
 from sqlalchemy.orm import Session
-from sqlalchemy import func, desc
+from sqlalchemy import func, desc, select
+from sqlalchemy.exc import IntegrityError
 from typing import List, Optional
 import pandas as pd
 import uuid
@@ -70,8 +71,17 @@ async def upload_transactions(
         if missing:
             raise HTTPException(
                 status_code=400, 
-                detail=f"Missing required columns: {missing}"
+                detail=f"Missing required columns: {missing}. Your CSV has: {list(df.columns)}"
             )
+        
+        # Check for duplicate transaction_ids within the CSV
+        if 'transaction_id' in df.columns:
+            duplicate_ids = df[df['transaction_id'].duplicated(keep=False)]
+            if len(duplicate_ids) > 0:
+                logger.warning(f"⚠️  Found {len(duplicate_ids)} duplicate transaction_ids in CSV. Keeping first occurrence.")
+                # Remove duplicates, keeping first occurrence
+                df = df.drop_duplicates(subset=['transaction_id'], keep='first')
+                logger.info(f"📊 After removing duplicates: {len(df)} rows")
         
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Error reading CSV: {str(e)}")
@@ -119,7 +129,8 @@ def get_upload_status(upload_id: str, db: Session = Depends(get_db)):
         num_transactions=upload.num_transactions,
         categorization_completed=upload.categorization_completed,
         anomaly_detection_completed=upload.anomaly_detection_completed,
-        progress_pct=progress
+        progress_pct=progress,
+        error_message=upload.error_message
     )
 
 
@@ -133,7 +144,7 @@ def get_transactions(
     category: Optional[str] = None,
     is_anomaly: Optional[bool] = None,
     page: int = Query(1, ge=1),
-    page_size: int = Query(50, ge=1, le=500),
+    page_size: int = Query(50, ge=1, le=1000),  # Increased limit for dashboard needs
     db: Session = Depends(get_db)
 ):
     """
@@ -141,35 +152,52 @@ def get_transactions(
     Demonstrates: Query optimization, pagination
     """
     
-    query = db.query(Transaction).filter(Transaction.user_id == user_id)
-    
-    # Apply filters
-    if category:
-        query = query.filter(Transaction.category == category)
-    
-    if is_anomaly is not None:
-        if is_anomaly:
-            query = query.filter(Transaction.anomaly_score > 0)
-        else:
-            query = query.filter(
-                (Transaction.anomaly_score == 0) | (Transaction.anomaly_score.is_(None))
-            )
-    
-    # Get total count
-    total = query.count()
-    
-    # Apply pagination
-    transactions = query.order_by(desc(Transaction.transaction_date))\
-                       .offset((page - 1) * page_size)\
-                       .limit(page_size)\
-                       .all()
-    
-    return TransactionList(
-        transactions=transactions,
-        total=total,
-        page=page,
-        page_size=page_size
-    )
+    try:
+        query = db.query(Transaction).filter(Transaction.user_id == user_id)
+        
+        # Apply filters
+        if category:
+            query = query.filter(Transaction.category == category)
+        
+        if is_anomaly is not None:
+            if is_anomaly:
+                query = query.filter(Transaction.anomaly_score > 0)
+            else:
+                query = query.filter(
+                    (Transaction.anomaly_score == 0) | (Transaction.anomaly_score.is_(None))
+                )
+        
+        # Get total count
+        total = query.count()
+        
+        # Apply pagination
+        transactions = query.order_by(desc(Transaction.transaction_date))\
+                           .offset((page - 1) * page_size)\
+                           .limit(page_size)\
+                           .all()
+        
+        # Validate transactions before returning
+        valid_transactions = []
+        for txn in transactions:
+            try:
+                # Ensure all required fields are present
+                if txn.transaction_id and txn.merchant and txn.category:
+                    valid_transactions.append(txn)
+                else:
+                    logger.warning(f"Skipping transaction {txn.id}: missing required fields")
+            except Exception as e:
+                logger.error(f"Error validating transaction {txn.id if hasattr(txn, 'id') else 'unknown'}: {str(e)}")
+                continue
+        
+        return TransactionList(
+            transactions=valid_transactions,
+            total=total,
+            page=page,
+            page_size=page_size
+        )
+    except Exception as e:
+        logger.error(f"Error fetching transactions for user {user_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error fetching transactions: {str(e)}")
 
 
 @router.get("/transactions/{transaction_id}", response_model=TransactionResponse, tags=["Transactions"])
@@ -198,12 +226,19 @@ def get_dashboard(
     """
     
     # Get all transactions
-    transactions = db.query(Transaction)\
-                    .filter(Transaction.user_id == user_id)\
-                    .all()
-    
-    if not transactions:
-        raise HTTPException(status_code=404, detail="No transactions found for user")
+    try:
+        transactions = db.query(Transaction)\
+                        .filter(Transaction.user_id == user_id)\
+                        .all()
+        
+        if not transactions:
+            logger.info(f"No transactions found for user {user_id}")
+            raise HTTPException(status_code=404, detail="No transactions found for user. Please upload a CSV file first.")
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error querying transactions for dashboard: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error fetching dashboard data: {str(e)}")
     
     # Convert to dicts for analysis
     txn_dicts = [
@@ -377,68 +412,235 @@ def process_upload(upload_id: str, df: pd.DataFrame, user_id: str):
         with get_db_context() as db:
             upload = db.query(Upload).filter(Upload.upload_id == upload_id).first()
             
-            # Parse dates
-            df['transaction_date'] = pd.to_datetime(df['transaction_date'])
+            # Parse dates with error handling
+            try:
+                df['transaction_date'] = pd.to_datetime(df['transaction_date'], errors='coerce')
+                invalid_dates = df['transaction_date'].isna().sum()
+                if invalid_dates > 0:
+                    logger.warning(f"Found {invalid_dates} invalid dates, setting to current date")
+                    df.loc[df['transaction_date'].isna(), 'transaction_date'] = pd.Timestamp.now()
+            except Exception as e:
+                raise ValueError(f"Error parsing transaction_date column: {str(e)}")
+            
             if 'timestamp' in df.columns:
-                df['timestamp'] = pd.to_datetime(df['timestamp'])
+                try:
+                    df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
+                    df.loc[df['timestamp'].isna(), 'timestamp'] = df['transaction_date']
+                except Exception as e:
+                    logger.warning(f"Error parsing timestamp, using transaction_date: {str(e)}")
+                    df['timestamp'] = df['transaction_date']
             else:
                 df['timestamp'] = df['transaction_date']
             
             # Run ML categorization if category not in CSV
             if 'category' not in df.columns or df['category'].isna().any():
-                logger.info("Running ML categorization...")
-                categorizer = get_categorizer()
-                predictions = categorizer.predict(df['clean_description'].fillna('').tolist())
-                df['predicted_category'] = [p['category'] for p in predictions]
-                df['prediction_confidence'] = [p['confidence'] for p in predictions]
-                upload.categorization_completed = True
+                try:
+                    logger.info("Running ML categorization...")
+                    categorizer = get_categorizer()
+                    predictions = categorizer.predict(df['clean_description'].fillna('').tolist())
+                    df['predicted_category'] = [p['category'] for p in predictions]
+                    df['prediction_confidence'] = [p['confidence'] for p in predictions]
+                    upload.categorization_completed = True
+                except Exception as e:
+                    logger.warning(f"ML categorization failed: {str(e)}, using 'Other' as default")
+                    df['predicted_category'] = 'Other'
+                    df['prediction_confidence'] = 0.0
+                    upload.categorization_completed = False
             
             # Run anomaly detection
-            logger.info("Running anomaly detection...")
-            detector = get_anomaly_detector()
-            txn_dicts = df.to_dict('records')
-            results = detector.detect_anomalies(txn_dicts)
-            df_results = pd.DataFrame(results)
-            
-            # Merge results back
-            for col in ['is_amount_anomaly', 'is_frequency_anomaly', 'is_merchant_anomaly', 'anomaly_score']:
-                if col in df_results.columns:
-                    df[col] = df_results[col]
-            
-            upload.anomaly_detection_completed = True
+            try:
+                logger.info("Running anomaly detection...")
+                detector = get_anomaly_detector()
+                txn_dicts = df.to_dict('records')
+                results = detector.detect_anomalies(txn_dicts)
+                df_results = pd.DataFrame(results)
+                
+                # Merge results back
+                for col in ['is_amount_anomaly', 'is_frequency_anomaly', 'is_merchant_anomaly', 'anomaly_score']:
+                    if col in df_results.columns:
+                        df[col] = df_results[col]
+                    else:
+                        # Set defaults if column missing
+                        df[col] = False if 'anomaly' in col else 0.0
+                
+                upload.anomaly_detection_completed = True
+            except Exception as e:
+                logger.warning(f"Anomaly detection failed: {str(e)}, continuing without anomaly detection")
+                df['is_amount_anomaly'] = False
+                df['is_frequency_anomaly'] = False
+                df['is_merchant_anomaly'] = False
+                df['anomaly_score'] = 0.0
+                upload.anomaly_detection_completed = False
             
             # Save transactions to database
             logger.info("Saving to database...")
             transactions = []
-            for _, row in df.iterrows():
-                txn = Transaction(
-                    transaction_id=row.get('transaction_id', f"txn_{uuid.uuid4().hex[:12]}"),
-                    user_id=user_id,
-                    upload_id=upload_id,
-                    transaction_date=row['transaction_date'],
-                    timestamp=row['timestamp'],
-                    amount=float(row['amount']),
-                    currency=row.get('currency', 'EUR'),
-                    merchant=row['merchant'],
-                    clean_description=str(row.get('clean_description', row['merchant'])),
-                    category=row.get('category', row.get('predicted_category', 'Other')),
-                    predicted_category=row.get('predicted_category'),
-                    prediction_confidence=row.get('prediction_confidence'),
-                    payment_method=row.get('payment_method'),
-                    is_credit=bool(row.get('is_credit', False)),
-                    hour_of_day=int(row.get('hour_of_day', 0)),
-                    day_of_week=int(row.get('day_of_week', 0)),
-                    is_weekend=bool(row.get('is_weekend', False)),
-                    is_night=bool(row.get('is_night', False)),
-                    is_amount_anomaly=bool(row.get('is_amount_anomaly', False)),
-                    is_frequency_anomaly=bool(row.get('is_frequency_anomaly', False)),
-                    is_merchant_anomaly=bool(row.get('is_merchant_anomaly', False)),
-                    anomaly_score=float(row.get('anomaly_score', 0.0)),
-                    processed_at=datetime.utcnow()
-                )
-                transactions.append(txn)
+            errors = []
+            skipped_duplicates = 0
+            updated_existing = 0
             
-            db.bulk_save_objects(transactions)
+            # Get existing transaction IDs for this user to avoid duplicates
+            try:
+                existing_txn_ids_result = db.scalars(
+                    select(Transaction.transaction_id).where(Transaction.user_id == user_id)
+                ).all()
+                existing_txn_ids = set(existing_txn_ids_result) if existing_txn_ids_result else set()
+                logger.info(f"📊 Found {len(existing_txn_ids)} existing transactions for user {user_id}")
+            except Exception as e:
+                logger.warning(f"⚠️  Error querying existing transactions: {str(e)}, proceeding without duplicate check")
+                existing_txn_ids = set()
+            
+            for idx, row in df.iterrows():
+                try:
+                    # Validate required fields
+                    if pd.isna(row.get('amount')) or row.get('amount') == '':
+                        errors.append(f"Row {idx}: Missing or invalid amount")
+                        continue
+                    
+                    if pd.isna(row.get('merchant')) or str(row.get('merchant')).strip() == '':
+                        errors.append(f"Row {idx}: Missing merchant name")
+                        continue
+                    
+                    # Get transaction_id, generate if missing
+                    txn_id = row.get('transaction_id')
+                    if pd.isna(txn_id) or str(txn_id).strip() == '':
+                        txn_id = f"txn_{uuid.uuid4().hex[:12]}"
+                    else:
+                        txn_id = str(txn_id).strip()
+                    
+                    # Check if transaction already exists
+                    if txn_id in existing_txn_ids:
+                        # Update existing transaction instead of creating duplicate
+                        existing_txn = db.query(Transaction).filter(
+                            Transaction.transaction_id == txn_id,
+                            Transaction.user_id == user_id
+                        ).first()
+                        
+                        if existing_txn:
+                            # Update existing transaction with new data
+                            existing_txn.upload_id = upload_id
+                            existing_txn.transaction_date = row['transaction_date']
+                            existing_txn.timestamp = row.get('timestamp', row['transaction_date'])
+                            existing_txn.amount = float(row['amount'])
+                            existing_txn.currency = row.get('currency', 'EUR')
+                            existing_txn.merchant = str(row['merchant']).strip()
+                            existing_txn.clean_description = str(row.get('clean_description', row['merchant'])).strip()
+                            existing_txn.category = row.get('category') or row.get('predicted_category') or 'Other'
+                            existing_txn.predicted_category = row.get('predicted_category') if pd.notna(row.get('predicted_category')) else None
+                            existing_txn.prediction_confidence = float(row.get('prediction_confidence', 0.0)) if pd.notna(row.get('prediction_confidence')) else None
+                            existing_txn.payment_method = row.get('payment_method')
+                            existing_txn.is_credit = bool(row.get('is_credit', False))
+                            existing_txn.hour_of_day = int(row.get('hour_of_day', 0)) if pd.notna(row.get('hour_of_day')) else 0
+                            existing_txn.day_of_week = int(row.get('day_of_week', 0)) if pd.notna(row.get('day_of_week')) else 0
+                            existing_txn.is_weekend = bool(row.get('is_weekend', False))
+                            existing_txn.is_night = bool(row.get('is_night', False))
+                            existing_txn.is_amount_anomaly = bool(row.get('is_amount_anomaly', False))
+                            existing_txn.is_frequency_anomaly = bool(row.get('is_frequency_anomaly', False))
+                            existing_txn.is_merchant_anomaly = bool(row.get('is_merchant_anomaly', False))
+                            existing_txn.anomaly_score = float(row.get('anomaly_score', 0.0)) if pd.notna(row.get('anomaly_score')) else 0.0
+                            existing_txn.processed_at = datetime.utcnow()
+                            updated_existing += 1
+                            continue
+                        else:
+                            # ID exists but not for this user - skip to avoid conflict
+                            skipped_duplicates += 1
+                            continue
+                    
+                    # Create new transaction
+                    txn = Transaction(
+                        transaction_id=txn_id,
+                        user_id=user_id,
+                        upload_id=upload_id,
+                        transaction_date=row['transaction_date'],
+                        timestamp=row.get('timestamp', row['transaction_date']),
+                        amount=float(row['amount']),
+                        currency=row.get('currency', 'EUR'),
+                        merchant=str(row['merchant']).strip(),
+                        clean_description=str(row.get('clean_description', row['merchant'])).strip(),
+                        category=row.get('category') or row.get('predicted_category') or 'Other',
+                        predicted_category=row.get('predicted_category') if pd.notna(row.get('predicted_category')) else None,
+                        prediction_confidence=float(row.get('prediction_confidence', 0.0)) if pd.notna(row.get('prediction_confidence')) else None,
+                        payment_method=row.get('payment_method'),
+                        is_credit=bool(row.get('is_credit', False)),
+                        hour_of_day=int(row.get('hour_of_day', 0)) if pd.notna(row.get('hour_of_day')) else 0,
+                        day_of_week=int(row.get('day_of_week', 0)) if pd.notna(row.get('day_of_week')) else 0,
+                        is_weekend=bool(row.get('is_weekend', False)),
+                        is_night=bool(row.get('is_night', False)),
+                        is_amount_anomaly=bool(row.get('is_amount_anomaly', False)),
+                        is_frequency_anomaly=bool(row.get('is_frequency_anomaly', False)),
+                        is_merchant_anomaly=bool(row.get('is_merchant_anomaly', False)),
+                        anomaly_score=float(row.get('anomaly_score', 0.0)) if pd.notna(row.get('anomaly_score')) else 0.0,
+                        processed_at=datetime.utcnow()
+                    )
+                    transactions.append(txn)
+                    existing_txn_ids.add(txn_id)  # Track to avoid duplicates in same batch
+                    
+                except Exception as e:
+                    errors.append(f"Row {idx}: {str(e)}")
+                    logger.warning(f"Error processing row {idx}: {str(e)}")
+                    continue
+            
+            if errors and len(errors) > 10:
+                error_summary = f"{len(errors)} rows had errors. First 10: {'; '.join(errors[:10])}"
+                logger.warning(error_summary)
+            elif errors:
+                logger.warning(f"Errors in {len(errors)} rows: {'; '.join(errors)}")
+            
+            if skipped_duplicates > 0:
+                logger.info(f"⏭️  Skipped {skipped_duplicates} duplicate transactions")
+            
+            if updated_existing > 0:
+                logger.info(f"🔄 Updated {updated_existing} existing transactions")
+            
+            if not transactions and updated_existing == 0:
+                raise ValueError(f"No new transactions to save. {skipped_duplicates} duplicates skipped. Check your CSV data format.")
+            
+            # Save new transactions in batches with error handling
+            if transactions:
+                try:
+                    db.bulk_save_objects(transactions)
+                    db.commit()
+                    logger.info(f"✅ Saved {len(transactions)} new transactions, updated {updated_existing} existing")
+                except IntegrityError as bulk_error:
+                    # If bulk insert fails due to duplicates, try inserting one by one
+                    logger.warning(f"⚠️  Bulk insert failed due to duplicate constraint: {str(bulk_error)}. Trying individual inserts...")
+                    db.rollback()
+                    
+                    # Insert transactions one by one, skipping duplicates
+                    saved_count = 0
+                    for txn in transactions:
+                        try:
+                            # Check if it exists again (might have been added by another process)
+                            exists = db.query(Transaction).filter(
+                                Transaction.transaction_id == txn.transaction_id,
+                                Transaction.user_id == user_id
+                            ).first()
+                            
+                            if exists:
+                                skipped_duplicates += 1
+                                continue
+                            
+                            db.add(txn)
+                            db.commit()
+                            saved_count += 1
+                        except IntegrityError as e:
+                            db.rollback()
+                            skipped_duplicates += 1
+                            logger.warning(f"⚠️  Skipped duplicate transaction_id: {txn.transaction_id}")
+                        except Exception as e:
+                            db.rollback()
+                            errors.append(f"Transaction {txn.transaction_id}: {str(e)}")
+                            logger.error(f"❌ Error saving transaction {txn.transaction_id}: {str(e)}")
+                    
+                    logger.info(f"✅ Saved {saved_count} new transactions individually, skipped {skipped_duplicates} duplicates")
+            else:
+                # Commit updates even if no new transactions
+                db.commit()
+                logger.info(f"✅ Updated {updated_existing} existing transactions, no new transactions to add")
+            
+            # Verify transactions were saved
+            final_count = db.query(Transaction).filter(Transaction.user_id == user_id).count()
+            logger.info(f"📊 Total transactions for user {user_id} after upload: {final_count}")
             
             # Update upload status
             upload.status = 'completed'
@@ -447,11 +649,15 @@ def process_upload(upload_id: str, df: pd.DataFrame, user_id: str):
             logger.info(f"✅ Upload {upload_id} processed successfully")
             
     except Exception as e:
-        logger.error(f"❌ Error processing upload {upload_id}: {str(e)}")
+        import traceback
+        error_trace = traceback.format_exc()
+        error_msg = f"{str(e)}\n\nTraceback:\n{error_trace}"
+        logger.error(f"❌ Error processing upload {upload_id}: {error_msg}")
         
         with get_db_context() as db:
             upload = db.query(Upload).filter(Upload.upload_id == upload_id).first()
             if upload:
                 upload.status = 'failed'
-                upload.error_message = str(e)
+                # Store first 1000 chars of error (database limit)
+                upload.error_message = error_msg[:1000] if len(error_msg) > 1000 else error_msg
                 db.commit()
