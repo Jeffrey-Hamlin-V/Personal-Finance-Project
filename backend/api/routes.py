@@ -11,9 +11,14 @@ import pandas as pd
 import uuid
 from datetime import datetime
 import logging
+import sys
+from pathlib import Path
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from database import get_db, Transaction, Upload, User, Insight
-from .schemas import (
+from api.schemas import (
     TransactionResponse, TransactionList, UploadResponse,
     DashboardResponse, InsightResponse, SpendingSummary,
     AnalyticsResponse, CategorySpending, MerchantSpending,
