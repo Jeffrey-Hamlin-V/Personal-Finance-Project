@@ -69,19 +69,54 @@ function SignupPage({ setCurrentPage }) {
       return;
     }
 
-    // TODO: Send data to backend/DBMS
-    console.log('Account data to be sent to DBMS:', {
-      fullName: formData.fullName,
-      email: formData.email,
-      phone: formData.phone,
-      password: formData.password
-    });
+    // Send data to backend
+    try {
+      const response = await fetch('http://localhost:8000/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          password: formData.password,
+          confirmPassword: formData.confirmPassword
+        })
+      });
 
-    // Simulate successful account creation
-    alert('Account created successfully! Redirecting to login...');
-    
-    // Redirect to login page
-    setCurrentPage('login');
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Backend returned an error
+        if (data.detail) {
+          newErrors.email = data.detail;
+          setErrors(newErrors);
+        } else {
+          alert('Signup failed. Please try again.');
+        }
+        return;
+      }
+
+      // Success!
+      console.log('✅ Account created:', data);
+      alert('Account created successfully! Redirecting to login...');
+      
+      // Clear form
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        password: '',
+        confirmPassword: ''
+      });
+      
+      setCurrentPage('login');  // Go to login, not dashboard
+      
+    } catch (error) {
+      console.error('❌ Signup error:', error);
+      alert('Failed to connect to server. Please make sure the backend is running.');
+    }
   };
 
   return (

@@ -1,0 +1,501 @@
+transaction_id,transaction_date,timestamp,amount,currency,payment_method,is_credit,merchant,clean_description,category,hour_of_day,day_of_week,is_weekend,is_night,is_amount_anomaly,is_frequency_anomaly,is_merchant_anomaly
+TXN_202406_000001,2025-04-29,2025-04-29 17:05:37,41.86,EUR,CONTACTLESS,False,eir,limerick eir delivery,Bills,17,1,False,False,False,False,True
+TXN_202406_000002,2025-04-04,2025-04-04 20:19:53,103.46,EUR,CARD,False,penneys,dd penneys bill xpseimvihcw,Shopping,20,4,False,False,False,False,True
+TXN_202406_000003,2025-04-21,2025-04-21 09:29:20,6.67,EUR,CARD,False,brunch house,dd brunchhouse ie,Food,9,0,False,False,False,False,True
+TXN_202406_000004,2025-04-01,2025-04-01 05:47:59,641.99,EUR,ONLINE,False,transfer in,app transfer in delivery london,Other,5,1,False,True,False,False,True
+TXN_202406_000005,2025-04-14,2025-04-14 01:13:53,386.05,EUR,TRANSFER,False,samsung store,ie samsung store,Shopping,1,0,False,True,False,False,True
+TXN_202406_000006,2025-04-12,2025-04-12 15:35:33,122.47,EUR,ONLINE,False,property mgmt,dd app property mgmt order uk,Bills,15,5,True,False,False,False,True
+TXN_202406_000007,2025-04-30,2025-04-30 09:28:56,19.29,EUR,CONTACTLESS,False,etsy,merchant london etsy,Shopping,9,2,False,False,False,False,True
+TXN_202406_000008,2025-04-16,2025-04-16 09:47:55,215.0,EUR,TRANSFER,False,medical clinic,in store medical clinic madrid us complete,Healthcare,9,2,False,False,False,False,True
+TXN_202406_000009,2025-04-23,2025-04-23 03:54:41,34.2,EUR,TRANSFER,False,sandwich co,so sandwich co order cork,Food,3,2,False,True,False,False,True
+TXN_202406_000010,2025-04-06,2025-04-06 19:03:43,37.41,EUR,CARD,False,north outlet ireland,ie standing order kiosk north outlet ireland,Food,19,6,True,False,False,False,True
+TXN_202406_000011,2025-04-12,2025-04-12 21:46:15,18.88,EUR,CONTACTLESS,False,thai kitchen,thai kitchen bill ie ie,Food,21,5,True,False,False,False,True
+TXN_202406_000012,2025-04-28,2025-04-28 20:21:17,201.13,EUR,TRANSFER,False,dermatology,de dd dermatology,Healthcare,20,0,False,False,False,False,True
+TXN_202406_000013,2025-04-02,2025-04-02 00:05:02,212.46,EUR,CARD,False,chargeback,transfer chargeback ie dublin,Other,0,2,False,True,False,False,True
+TXN_202406_000014,2025-04-19,2025-04-19 21:34:24,98.66,EUR,ONLINE,True,apcoa parking,apcoa parking limerick us irl,Transport,21,5,True,False,False,False,True
+TXN_202406_000015,2025-04-17,2025-04-17 14:07:43,59.94,EUR,CARD,False,toll road,toll road irl,Transport,14,3,False,False,False,False,True
+TXN_202406_000016,2025-04-18,2025-04-18 15:15:54,43.19,EUR,TRANSFER,False,chipper,so chipper ie,Food,15,4,False,False,False,False,True
+TXN_202406_000017,2025-04-23,2025-04-23 21:27:51,57.97,EUR,CONTACTLESS,False,zara,in store zara ie,Shopping,21,2,False,False,False,False,True
+TXN_202406_000018,2025-04-11,2025-04-11 12:00:18,46.93,EUR,CONTACTLESS,False,tk maxx,booking in store tk maxx uk,Shopping,12,4,False,False,False,False,True
+TXN_202406_000019,2025-04-14,2025-04-14 12:01:47,162.86,EUR,CONTACTLESS,False,water charges,watercharges order paris dublin,Bills,12,0,False,False,False,False,True
+TXN_202406_000020,2025-04-09,2025-04-09 22:59:56,246.58,EUR,TRANSFER,False,stationery mart,settlement stationery mart fr ie,Shopping,22,2,False,False,False,False,True
+TXN_202406_000021,2025-04-23,2025-04-23 00:54:54,26.64,EUR,TRANSFER,False,bus eireann,direct bus eireann fr,Transport,0,2,False,True,False,False,True
+TXN_202406_000022,2025-04-08,2025-04-08 14:23:37,259.04,EUR,CONTACTLESS,True,water charges,de standing order water charges delivery,Bills,14,1,False,False,False,False,False
+TXN_202406_000023,2025-04-17,2025-04-17 07:40:51,791.53,EUR,TRANSFER,False,paypal,merchant trip so paypal,Other,7,3,False,False,False,False,True
+TXN_202406_000024,2025-04-16,2025-04-16 22:01:27,305.62,EUR,CARD,False,zara,mobile zara berlin lorxdt us,Shopping,22,2,False,False,False,False,False
+TXN_202406_000025,2025-04-10,2025-04-10 23:28:49,88.13,EUR,CONTACTLESS,False,metro bus,metro bus delivery ie galway,Transport,23,3,False,False,False,True,True
+TXN_202406_000026,2025-04-25,2025-04-25 05:36:48,92.22,EUR,TRANSFER,False,transit topup,mobile trip transit topup settlement de,Transport,5,4,False,True,False,False,True
+TXN_202406_000027,2025-04-15,2025-04-15 05:39:24,19.26,EUR,TRANSFER,False,penneys,direct penneys merchant direct,Shopping,5,1,False,True,False,False,False
+TXN_202406_000028,2025-04-30,2025-04-30 12:24:26,116.3,EUR,ONLINE,False,gas bill,gas bill,Bills,12,2,False,False,False,False,True
+TXN_202406_000029,2025-04-23,2025-04-23 10:02:05,35.56,EUR,TRANSFER,False,city clinic inc,dd cityclinicinc london,Food,10,2,False,False,False,False,True
+TXN_202406_000030,2025-04-08,2025-04-08 01:42:13,44.95,EUR,CARD,True,transit topup,transittopup standing order ie kiosk london,Transport,1,1,False,True,False,False,False
+TXN_202406_000031,2025-04-09,2025-04-09 15:49:14,24.81,EUR,ONLINE,False,prime video,prime video galway commission irl,Entertainment,15,2,False,False,False,False,True
+TXN_202406_000032,2025-04-30,2025-04-30 06:31:47,306.73,EUR,CONTACTLESS,False,internet provider,settlement fr internet provider,Bills,6,2,False,False,False,False,True
+TXN_202406_000033,2025-04-15,2025-04-15 02:24:39,335.24,EUR,TRANSFER,False,electric bill,electric bill txn ie,Bills,2,1,False,True,False,False,True
+TXN_202406_000034,2025-04-07,2025-04-07 08:52:24,487.43,EUR,TRANSFER,False,etsy,irl etsy topup,Shopping,8,0,False,False,False,False,False
+TXN_202406_000035,2025-04-17,2025-04-17 19:44:37,85.05,EUR,CONTACTLESS,False,rent payment,rent,Bills,19,3,False,False,False,False,True
+TXN_202406_000036,2025-04-23,2025-04-23 07:09:03,116.6,EUR,CONTACTLESS,False,apcoa parking,delivery apcoa parking complete nl,Transport,7,2,False,False,False,False,False
+TXN_202406_000037,2025-04-05,2025-04-05 13:19:58,66.21,EUR,CONTACTLESS,False,shell fuel,so shell fuel galway ie,Transport,13,5,True,False,False,False,True
+TXN_202406_000038,2025-04-23,2025-04-23 01:33:06,308.45,EUR,CARD,False,vodafone,vodafone delivery galway,Bills,1,2,False,True,False,False,True
+TXN_202406_000039,2025-04-20,2025-04-20 01:06:36,189.84,EUR,TRANSFER,False,electric bill,pur electric bill us txn,Bills,1,6,True,True,False,False,False
+TXN_202406_000040,2025-04-18,2025-04-18 10:17:09,145.22,EUR,ONLINE,False,the home store,mobile thehomestore,Shopping,10,4,False,False,False,False,True
+TXN_202406_000041,2025-04-01,2025-04-01 19:32:25,19.42,EUR,CARD,False,chipper,chipper delivery galway commission,Food,19,1,False,False,False,False,False
+TXN_202406_000042,2025-04-10,2025-04-10 14:24:43,264.19,EUR,TRANSFER,False,ticketmaster,ticketmaster booking,Entertainment,14,3,False,False,True,False,True
+TXN_202406_000043,2025-04-18,2025-04-18 11:21:43,38.86,EUR,ONLINE,False,costa coffee,irl costa coffee,Food,11,4,False,False,False,False,True
+TXN_202406_000044,2025-04-17,2025-04-17 03:39:23,31.68,EUR,ONLINE,True,food truck,transfer foodtruck fr london,Food,3,3,False,True,False,True,True
+TXN_202406_000045,2025-04-29,2025-04-29 01:07:24,23.9,EUR,CONTACTLESS,False,subscription bill,transfer bill kiosk booking,Bills,1,1,False,True,False,True,True
+TXN_202406_000046,2025-04-09,2025-04-09 09:40:53,40.09,EUR,CONTACTLESS,False,dunkin,dunkin complete dublin,Food,9,2,False,False,False,False,True
+TXN_202406_000047,2025-04-01,2025-04-01 15:48:27,29.47,EUR,CARD,False,new market ltd,web newmarketltd cork us txn,Food,15,1,False,False,False,False,True
+TXN_202406_000048,2025-04-12,2025-04-12 09:20:03,177.69,EUR,ONLINE,False,the cafe co,so kiosk the cafe co dublin commission settlement dublin,Shopping,9,5,True,False,False,False,True
+TXN_202406_000049,2025-04-24,2025-04-24 23:15:59,11.22,EUR,TRANSFER,False,apple music,in store apple music,Entertainment,23,3,False,False,False,False,True
+TXN_202406_000050,2025-04-15,2025-04-15 15:55:47,550.29,EUR,CONTACTLESS,True,card verification,so verification,Other,15,1,False,False,False,True,True
+TXN_202406_000051,2025-04-27,2025-04-27 08:47:23,722.33,EUR,ONLINE,False,charity donation,pur charity donation bill london es,Other,8,6,True,False,False,True,True
+TXN_202406_000052,2025-04-02,2025-04-02 16:06:32,29.22,EUR,ONLINE,False,dunkin,dunkin de,Food,16,2,False,False,False,True,False
+TXN_202406_000053,2025-04-14,2025-04-14 03:39:14,30.47,EUR,CARD,False,kfc,in store txn kfc standing order,Food,3,0,False,True,False,False,True
+TXN_202406_000054,2025-04-14,2025-04-14 13:05:05,28.15,EUR,TRANSFER,False,city diner group,us direct city diner group booking,Food,13,0,False,False,False,False,True
+TXN_202406_000055,2025-04-30,2025-04-30 15:17:38,24.36,EUR,ONLINE,True,grocery deli,complete grocery deli,Food,15,2,False,False,False,False,True
+TXN_202406_000056,2025-04-03,2025-04-03 07:12:10,51.2,EUR,TRANSFER,False,prime video,prime video order,Entertainment,7,3,False,False,False,False,False
+TXN_202406_000057,2025-04-01,2025-04-01 17:07:09,38.8,EUR,CARD,False,subway,pur es web topup subway,Food,17,1,False,False,False,False,True
+TXN_202406_000058,2025-04-24,2025-04-24 21:54:17,119.76,EUR,CARD,False,m toll,so,Transport,21,3,False,False,False,True,True
+TXN_202406_000059,2025-04-22,2025-04-22 23:29:24,300.96,EUR,ONLINE,False,mortgage payment,mortgage uk,Bills,23,1,False,False,False,True,True
+TXN_202406_000060,2025-04-04,2025-04-04 09:15:47,689.44,EUR,CONTACTLESS,False,internet provider,internet provider complete,Bills,9,4,False,False,True,False,False
+TXN_202406_000061,2025-04-14,2025-04-14 05:53:27,31.29,EUR,ONLINE,False,pizza hut,pizza hut london gersduhh gersduhh,Food,5,0,False,True,False,False,True
+TXN_202406_000062,2025-04-22,2025-04-22 14:14:38,279.95,EUR,CARD,False,subscription bill,order bill pur galway,Bills,14,1,False,False,False,False,False
+TXN_202406_000063,2025-04-20,2025-04-20 10:19:32,102.97,EUR,CONTACTLESS,False,electric ireland,electric ireland madrid,Bills,10,6,True,False,False,False,True
+TXN_202406_000064,2025-04-12,2025-04-12 08:08:46,67.11,EUR,TRANSFER,False,bolt,fr order bolt,Transport,8,5,True,False,False,False,True
+TXN_202406_000065,2025-04-30,2025-04-30 20:32:52,714.1,EUR,ONLINE,True,loan payment,dd loan dublin us,Other,20,2,False,False,False,False,True
+TXN_202406_000066,2025-04-09,2025-04-09 06:37:24,7.32,EUR,CONTACTLESS,False,new cafe inc,berlin new cafe inc,Transport,6,2,False,False,False,False,True
+TXN_202406_000067,2025-04-18,2025-04-18 06:52:28,79.33,EUR,CONTACTLESS,False,mobile bill,in store mobile bill uk ie,Bills,6,4,False,False,False,False,True
+TXN_202406_000068,2025-04-06,2025-04-06 13:33:21,215.5,EUR,ONLINE,False,local store,transfer local store berlin,Shopping,13,6,True,False,False,True,True
+TXN_202406_000069,2025-04-27,2025-04-27 23:35:38,39.07,EUR,TRANSFER,False,live nation,irl live nation mobile london,Entertainment,23,6,True,False,False,False,True
+TXN_202406_000070,2025-04-14,2025-04-14 19:58:43,62.72,EUR,ONLINE,True,parking meter,trip parking meter merchant london,Transport,19,0,False,False,False,False,True
+TXN_202406_000071,2025-04-20,2025-04-20 13:06:31,325.26,EUR,CARD,False,subscription bill,berlin berlin bill,Bills,13,6,True,False,False,False,False
+TXN_202406_000072,2025-04-04,2025-04-04 19:24:27,46.44,EUR,TRANSFER,False,parking meter,parking meter bill,Transport,19,4,False,False,False,False,False
+TXN_202406_000073,2025-04-23,2025-04-23 01:16:56,5.26,EUR,ONLINE,False,dunkin,ie dunkin,Food,1,2,False,True,False,False,False
+TXN_202406_000074,2025-04-04,2025-04-04 21:03:41,239.56,EUR,CONTACTLESS,True,etsy,etsy topup fr,Shopping,21,4,False,False,False,False,False
+TXN_202406_000075,2025-04-01,2025-04-01 14:02:13,62.56,EUR,TRANSFER,False,vision care,vision care,Healthcare,14,1,False,False,False,False,True
+TXN_202406_000076,2025-04-18,2025-04-18 08:52:39,199.1,EUR,CONTACTLESS,False,medical clinic,medical clinic commission dublin,Healthcare,8,4,False,False,False,True,False
+TXN_202406_000077,2025-04-19,2025-04-19 17:55:04,258.19,EUR,CONTACTLESS,False,gas bill,gas bill txn ie merchant cork standing order,Bills,17,5,True,False,False,False,False
+TXN_202406_000078,2025-04-26,2025-04-26 04:02:15,269.83,EUR,TRANSFER,False,electric bill,limerick electric bill es,Bills,4,5,True,True,False,False,False
+TXN_202406_000079,2025-04-22,2025-04-22 13:04:41,71.24,EUR,ONLINE,False,mri scan,ie mri scan app,Healthcare,13,1,False,False,False,False,True
+TXN_202406_000080,2025-04-30,2025-04-30 08:38:48,8.02,EUR,CARD,False,global clinic plc,order madrid globalclinicplc de,Food,8,2,False,False,False,False,True
+TXN_202406_000081,2025-04-23,2025-04-23 10:58:22,16.18,EUR,CONTACTLESS,False,food truck,food truck dublin,Food,10,2,False,False,True,True,False
+TXN_202406_000082,2025-04-04,2025-04-04 05:12:28,24.34,EUR,TRANSFER,False,etsy,etsy settlement complete settlement,Shopping,5,4,False,True,False,False,False
+TXN_202406_000083,2025-04-24,2025-04-24 20:48:34,23.75,EUR,CONTACTLESS,False,costa coffee,costa coffee galway ie,Food,20,3,False,False,False,False,False
+TXN_202406_000084,2025-04-06,2025-04-06 11:19:10,601.88,EUR,TRANSFER,False,card verification,verification order berlin berlin,Other,11,6,True,False,False,False,False
+TXN_202406_000085,2025-04-02,2025-04-02 09:27:16,49.48,EUR,ONLINE,False,disney plus,dublin disney plus,Entertainment,9,2,False,False,False,False,True
+TXN_202406_000086,2025-04-23,2025-04-23 19:52:29,72.44,EUR,CARD,False,charging station,pur charging station order,Transport,19,2,False,False,False,False,True
+TXN_202406_000087,2025-04-15,2025-04-15 23:04:00,41.42,EUR,TRANSFER,True,grocery deli,standing order grocery deli berlin settlement,Food,23,1,False,False,False,False,False
+TXN_202406_000088,2025-04-15,2025-04-15 20:12:37,266.88,EUR,TRANSFER,False,subscription bill,dd app bill order,Bills,20,1,False,False,False,False,False
+TXN_202406_000089,2025-04-27,2025-04-27 16:03:58,15.16,EUR,ONLINE,False,dermatology,transfer dermatology,Healthcare,16,6,True,False,False,False,False
+TXN_202406_000090,2025-04-03,2025-04-03 20:41:51,13.66,EUR,CARD,False,interest charge,commission pur irl interest charge interest charge,Other,20,3,False,False,False,False,True
+TXN_202406_000091,2025-04-13,2025-04-13 10:00:36,24.56,EUR,TRANSFER,False,parking meter,booking standing order txn parking meter,Transport,10,6,True,False,False,False,False
+TXN_202406_000092,2025-04-08,2025-04-08 18:27:42,414.0,EUR,TRANSFER,True,tk maxx,tk maxx nl complete,Shopping,18,1,False,False,False,False,False
+TXN_202406_000093,2025-04-05,2025-04-05 10:55:52,636.65,EUR,TRANSFER,False,govt service,dd govt service booking,Other,10,5,True,False,False,False,True
+TXN_202406_000094,2025-04-17,2025-04-17 04:52:52,23.18,EUR,ONLINE,False,subscription bill,kiosk bill,Bills,4,3,False,True,False,False,False
+TXN_202406_000095,2025-04-09,2025-04-09 06:52:49,3.8,EUR,TRANSFER,False,bowling alley,bowling alley delivery london mobile txn,Entertainment,6,2,False,False,False,False,True
+TXN_202406_000096,2025-04-21,2025-04-21 01:36:34,35.69,EUR,CONTACTLESS,False,west diner eu,commission transfer london westdinereu,Transport,1,0,False,True,False,False,True
+TXN_202406_000097,2025-04-17,2025-04-17 00:31:20,78.81,EUR,TRANSFER,False,lyft,madrid transfer ie trip lyft,Transport,0,3,False,True,False,False,True
+TXN_202406_000098,2025-04-22,2025-04-22 02:20:37,558.76,EUR,ONLINE,False,course payment,booking coursepayment madrid direct web,Other,2,1,False,True,False,False,True
+TXN_202406_000099,2025-04-15,2025-04-15 10:06:59,13.87,EUR,CONTACTLESS,False,dominos,dominos trip,Food,10,1,False,False,False,False,True
+TXN_202406_000100,2025-04-26,2025-04-26 21:54:15,311.54,EUR,CARD,False,new market ltd,new market ltd topup,Shopping,21,5,True,False,False,False,False
+TXN_202406_000101,2025-04-18,2025-04-18 21:10:56,272.4,EUR,CONTACTLESS,False,south cafe co,south cafe co ie,Shopping,21,4,False,False,False,False,True
+TXN_202406_000102,2025-04-30,2025-04-30 03:06:10,18.47,EUR,CARD,False,vision care,vision care london,Healthcare,3,2,False,True,False,False,False
+TXN_202406_000103,2025-04-27,2025-04-27 07:47:58,474.95,EUR,CONTACTLESS,False,penneys,penneys paris nl,Shopping,7,6,True,False,False,False,False
+TXN_202406_000104,2025-04-19,2025-04-19 08:32:36,41.74,EUR,CARD,False,post office,post office app dublin pur merchant de delivery,Other,8,5,True,False,False,False,True
+TXN_202406_000105,2025-04-06,2025-04-06 04:34:59,28.06,EUR,CARD,False,netflix,netflix london merchant,Entertainment,4,6,True,True,False,False,True
+TXN_202406_000106,2025-04-04,2025-04-04 04:47:45,3.92,EUR,CARD,False,costa coffee,costacoffee uk dd irl delivery,Food,4,4,False,True,False,False,False
+TXN_202406_000107,2025-04-30,2025-04-30 12:37:13,229.89,EUR,ONLINE,False,govt service,govt service in store ie,Other,12,2,False,False,False,False,False
+TXN_202406_000108,2025-04-12,2025-04-12 10:00:06,97.16,EUR,TRANSFER,False,health store,health store,Healthcare,10,5,True,False,False,False,True
+TXN_202406_000109,2025-04-12,2025-04-12 05:24:51,328.59,EUR,CARD,False,physio center,physio center direct bguaxn order,Healthcare,5,5,True,True,False,False,True
+TXN_202406_000110,2025-04-27,2025-04-27 21:32:15,241.68,EUR,TRANSFER,False,eir,eir berlin topup ie app,Bills,21,6,True,False,False,False,False
+TXN_202406_000111,2025-04-10,2025-04-10 08:51:15,111.94,EUR,TRANSFER,False,bike share,irl order settlement dd bike share,Transport,8,3,False,False,False,False,True
+TXN_202406_000112,2025-04-24,2025-04-24 00:12:25,65.42,EUR,CONTACTLESS,False,leap topup,standing order leap topup order paris dublin,Transport,0,3,False,True,False,False,True
+TXN_202406_000113,2025-04-18,2025-04-18 16:47:00,17.37,EUR,TRANSFER,False,coffee roasters,coffee roasters,Food,16,4,False,False,False,True,True
+TXN_202406_000114,2025-04-07,2025-04-07 12:23:39,311.2,EUR,CARD,False,gas networks,gas networks ie,Bills,12,0,False,False,False,False,True
+TXN_202406_000115,2025-04-20,2025-04-20 06:11:56,101.1,EUR,ONLINE,False,dart,madrid dart,Transport,6,6,True,False,False,False,True
+TXN_202406_000116,2025-04-20,2025-04-20 12:58:56,62.81,EUR,CONTACTLESS,True,amzn mktplace,amzn mktplace amzn mktplace order uk amzn mktplace paris mobile,Shopping,12,6,True,False,False,True,True
+TXN_202406_000117,2025-04-11,2025-04-11 01:09:55,35.36,EUR,ONLINE,False,foreign exchange,foreign,Other,1,4,False,True,False,False,True
+TXN_202406_000118,2025-04-20,2025-04-20 10:54:47,76.47,EUR,ONLINE,False,esso,esso bill,Transport,10,6,True,False,False,False,True
+TXN_202406_000119,2025-04-13,2025-04-13 14:37:25,661.35,EUR,CONTACTLESS,False,course payment,course kiosk so london uk,Other,14,6,True,False,False,False,False
+TXN_202406_000120,2025-04-08,2025-04-08 04:41:56,96.42,EUR,CONTACTLESS,True,free now,commission merchant free now delivery standing order,Transport,4,1,False,True,False,False,True
+TXN_202406_000121,2025-04-11,2025-04-11 07:42:57,32.8,EUR,CONTACTLESS,False,sandwich co,sandwich co web,Food,7,4,False,False,False,False,False
+TXN_202406_000122,2025-04-17,2025-04-17 03:09:48,14.3,EUR,CONTACTLESS,False,dart,web dart limerick irl,Transport,3,3,False,True,False,False,False
+TXN_202406_000123,2025-04-03,2025-04-03 15:10:27,4.04,EUR,TRANSFER,False,esso,us esso delivery dd,Transport,15,3,False,False,False,False,False
+TXN_202406_000124,2025-04-30,2025-04-30 12:50:38,290.39,EUR,TRANSFER,False,pharmacy plus,pharmacy plus order london merchant merchant,Healthcare,12,2,False,False,False,False,True
+TXN_202406_000125,2025-04-10,2025-04-10 19:24:24,328.09,EUR,TRANSFER,False,mobile bill,mobile bill london settlement merchant,Bills,19,3,False,False,False,False,False
+TXN_202406_000126,2025-04-05,2025-04-05 03:32:37,213.83,EUR,CARD,True,rent payment,rent topup,Bills,3,5,True,True,False,False,False
+TXN_202406_000127,2025-04-17,2025-04-17 12:30:45,68.29,EUR,ONLINE,False,dunnes stores,dunnes stores cork merchant,Shopping,12,3,False,False,False,False,True
+TXN_202406_000128,2025-04-18,2025-04-18 20:14:37,30.17,EUR,CONTACTLESS,False,bp fuel,bp fuel settlement,Transport,20,4,False,False,False,False,True
+TXN_202406_000129,2025-04-06,2025-04-06 11:29:54,348.14,EUR,CARD,False,north outlet ltd,north outlet ltd de,Shopping,11,6,True,False,False,False,True
+TXN_202406_000130,2025-04-05,2025-04-05 13:04:24,111.09,EUR,CARD,False,esso,standing order esso,Transport,13,5,True,False,False,False,False
+TXN_202406_000131,2025-04-22,2025-04-22 19:06:56,348.91,EUR,CARD,False,three,three,Bills,19,1,False,False,False,False,True
+TXN_202406_000132,2025-04-22,2025-04-22 19:13:19,26.38,EUR,CARD,False,uber,paris uber,Transport,19,1,False,False,False,True,True
+TXN_202406_000133,2025-04-08,2025-04-08 13:42:51,707.91,EUR,ONLINE,False,paypal,direct paypal order galway uk complete,Other,13,1,False,False,False,False,False
+TXN_202406_000134,2025-04-18,2025-04-18 08:04:39,121.52,EUR,CARD,False,card verification,dd verification vgipaxnq irl,Other,8,4,False,False,False,False,False
+TXN_202406_000135,2025-04-03,2025-04-03 13:13:57,142.49,EUR,CARD,False,wise transfer,wise transfer galway es,Other,13,3,False,False,False,False,True
+TXN_202406_000136,2025-04-06,2025-04-06 04:40:44,29.15,EUR,CARD,False,shell fuel,shell fuel bill paris,Transport,4,6,True,True,False,False,False
+TXN_202406_000137,2025-04-11,2025-04-11 04:00:56,273.42,EUR,ONLINE,False,internet provider,txn internetprovider transfer,Bills,4,4,False,True,False,False,False
+TXN_202406_000138,2025-04-03,2025-04-03 09:39:07,71.72,EUR,ONLINE,False,m toll,toll dublin,Transport,9,3,False,False,False,False,False
+TXN_202406_000139,2025-04-27,2025-04-27 10:03:09,95.49,EUR,CONTACTLESS,False,transit topup,transit topup galway so dublin ihjqcy,Transport,10,6,True,False,False,False,False
+TXN_202406_000140,2025-04-21,2025-04-21 06:28:36,398.24,EUR,CARD,False,ebay,ebay standing order,Shopping,6,0,False,False,False,False,True
+TXN_202406_000141,2025-04-25,2025-04-25 21:44:37,31.21,EUR,TRANSFER,False,ncp parking,in store transfer ncp parking cork merchant ie,Transport,21,4,False,False,False,False,True
+TXN_202406_000142,2025-04-11,2025-04-11 22:48:47,206.0,EUR,TRANSFER,True,amazon,amazon kiosk paris merchant complete delivery,Shopping,22,4,False,False,False,False,True
+TXN_202406_000143,2025-04-27,2025-04-27 14:34:42,218.84,EUR,CARD,False,adidas,de adidas irl delivery irl dublin so,Shopping,14,6,True,False,False,False,True
+TXN_202406_000144,2025-04-25,2025-04-25 04:19:28,89.84,EUR,TRANSFER,False,train ticket,kiosk train ticket delivery limerick es train ticket,Transport,4,4,False,True,False,False,True
+TXN_202406_000145,2025-04-30,2025-04-30 10:48:37,482.92,EUR,ONLINE,False,bookshop,bookshop bill irl pur,Shopping,10,2,False,False,False,False,True
+TXN_202406_000146,2025-04-25,2025-04-25 13:05:23,360.84,EUR,TRANSFER,False,charity donation,web charity donation bill uk complete,Other,13,4,False,False,False,False,False
+TXN_202406_000147,2025-04-28,2025-04-28 13:01:11,66.89,EUR,CARD,False,gp consult,gp consult topup nl settlement,Healthcare,13,0,False,False,False,False,True
+TXN_202406_000148,2025-04-16,2025-04-16 03:36:10,82.43,EUR,TRANSFER,True,pret a manger,uk pret manger order,Food,3,2,False,True,False,False,True
+TXN_202406_000149,2025-04-11,2025-04-11 07:17:34,18.05,EUR,CONTACTLESS,False,nandos,dd nando's galway,Food,7,4,False,False,False,False,True
+TXN_202406_000150,2025-04-21,2025-04-21 05:50:40,452.0,EUR,CARD,False,course payment,web course order settlement,Other,5,0,False,True,False,False,False
+TXN_202406_000151,2025-04-25,2025-04-25 11:10:22,90.17,EUR,ONLINE,False,the home store,limerick de booking the home store dublin,Shopping,11,4,False,False,False,False,False
+TXN_202406_000152,2025-04-24,2025-04-24 04:05:20,66.41,EUR,TRANSFER,False,new outlet services,new outlet services cork,Entertainment,4,3,False,True,False,False,True
+TXN_202406_000153,2025-04-25,2025-04-25 12:43:33,107.49,EUR,CARD,False,luas,luas limerick,Transport,12,4,False,False,False,False,True
+TXN_202406_000154,2025-04-28,2025-04-28 05:30:13,100.88,EUR,CONTACTLESS,True,train ticket,direct train ticket ie,Transport,5,0,False,True,False,False,False
+TXN_202406_000155,2025-04-25,2025-04-25 02:57:23,53.22,EUR,ONLINE,False,pizza hut,bill galway pizza hut,Food,2,4,False,True,False,False,False
+TXN_202406_000156,2025-04-23,2025-04-23 07:55:21,7.91,EUR,CARD,False,taco bell,transfer taco bell topup dublin,Food,7,2,False,False,False,False,True
+TXN_202406_000157,2025-04-09,2025-04-09 10:52:53,17.95,EUR,CARD,True,east electrics eu,east electrics eu web east electrics eu es madrid,Entertainment,10,2,False,False,False,False,True
+TXN_202406_000158,2025-04-25,2025-04-25 17:23:47,335.0,EUR,TRANSFER,False,atm withdrawal,atm withdrawal merchant,Other,17,4,False,False,False,False,True
+TXN_202406_000159,2025-04-19,2025-04-19 04:08:53,230.29,EUR,TRANSFER,False,north market services,so north market services galway settlement,Bills,4,5,True,True,False,True,True
+TXN_202406_000160,2025-04-15,2025-04-15 04:33:32,761.18,EUR,ONLINE,True,university fees,so university fees,Other,4,1,False,True,False,False,True
+TXN_202406_000161,2025-04-02,2025-04-02 08:11:38,12.03,EUR,CARD,False,burger king,in store merchant dublin burger king,Food,8,2,False,False,False,False,True
+TXN_202406_000162,2025-04-10,2025-04-10 08:54:28,1.07,EUR,CARD,False,cash withdrawal,booking mobile cash withdrawal,Other,8,3,False,False,False,False,True
+TXN_202406_000163,2025-04-26,2025-04-26 12:24:06,449.14,EUR,CONTACTLESS,False,south clinic co,web south clinic co topup london,Other,12,5,True,False,False,False,True
+TXN_202406_000164,2025-04-22,2025-04-22 10:16:51,472.84,EUR,ONLINE,False,fintech topup,mobile fintech topup,Other,10,1,False,False,False,False,True
+TXN_202406_000165,2025-04-21,2025-04-21 04:02:08,18.33,EUR,CARD,False,card verification,irl madrid cardverification standing order,Other,4,0,False,True,False,False,False
+TXN_202406_000166,2025-04-29,2025-04-29 05:08:58,777.76,EUR,TRANSFER,False,chargeback,chargeback order,Other,5,1,False,True,False,False,False
+TXN_202406_000167,2025-04-02,2025-04-02 05:02:51,193.79,EUR,CARD,False,vodafone,kiosk vodafone settlement,Bills,5,2,False,True,False,False,False
+TXN_202406_000168,2025-04-24,2025-04-24 20:23:46,50.95,EUR,TRANSFER,False,live nation,live nation order madrid irl,Entertainment,20,3,False,False,False,False,False
+TXN_202406_000169,2025-04-18,2025-04-18 16:41:24,183.65,EUR,TRANSFER,True,electric ireland,electric ireland bill london merchant,Bills,16,4,False,False,False,False,False
+TXN_202406_000170,2025-04-25,2025-04-25 23:13:45,447.81,EUR,CONTACTLESS,False,east store co,delivery east store co nl ie limerick,Other,23,4,False,False,False,False,True
+TXN_202406_000171,2025-04-20,2025-04-20 20:21:22,52.23,EUR,TRANSFER,False,youtube premium,mobile youtube premium bill,Entertainment,20,6,True,False,False,False,True
+TXN_202406_000172,2025-04-09,2025-04-09 10:53:55,123.31,EUR,TRANSFER,False,broadband bill,broadband bill complete fr london,Bills,10,2,False,False,False,False,True
+TXN_202406_000173,2025-04-04,2025-04-04 09:25:50,19.63,EUR,CONTACTLESS,False,sandwich co,complete bill settlement nl sandwich co,Food,9,4,False,False,False,False,False
+TXN_202406_000174,2025-04-10,2025-04-10 05:15:41,551.39,EUR,ONLINE,False,dermatology,transfer dermatology galway,Healthcare,5,3,False,True,True,False,False
+TXN_202406_000175,2025-04-28,2025-04-28 22:21:15,41.62,EUR,ONLINE,False,m toll,merchant,Transport,22,0,False,False,False,False,False
+TXN_202406_000176,2025-04-23,2025-04-23 09:22:57,282.34,EUR,CARD,False,subscription bill,direct subscriptionbill delivery berlin,Bills,9,2,False,False,False,False,False
+TXN_202406_000177,2025-04-08,2025-04-08 02:24:41,55.17,EUR,ONLINE,False,shake shack,shake shack madrid shake shack commission yowypn,Food,2,1,False,True,False,False,True
+TXN_202406_000178,2025-04-06,2025-04-06 19:14:47,218.72,EUR,ONLINE,False,eir,de galway eir,Bills,19,6,True,False,False,False,False
+TXN_202406_000179,2025-04-01,2025-04-01 12:12:26,57.81,EUR,CONTACTLESS,True,gas bill,pur web gas bill es,Bills,12,1,False,False,False,False,False
+TXN_202406_000180,2025-04-11,2025-04-11 17:52:17,34.01,EUR,CARD,False,nandos,delivery complete irl nando's irl web,Food,17,4,False,False,False,False,False
+TXN_202406_000181,2025-04-05,2025-04-05 09:25:34,316.56,EUR,CONTACTLESS,False,service charge,transfer service charge paris fr dublin,Bills,9,5,True,False,False,False,True
+TXN_202406_000182,2025-04-13,2025-04-13 04:42:33,112.29,EUR,ONLINE,True,stationery mart,delivery stationery mart stationery mart limerick,Shopping,4,6,True,True,False,False,False
+TXN_202406_000183,2025-04-29,2025-04-29 20:26:49,15.06,EUR,ONLINE,False,food truck,galway ie food truck,Food,20,1,False,False,False,True,False
+TXN_202406_000184,2025-04-05,2025-04-05 15:11:34,164.91,EUR,TRANSFER,True,insurance premium,delivery insurance premium galway,Bills,15,5,True,False,False,False,True
+TXN_202406_000185,2025-04-29,2025-04-29 06:47:19,32.37,EUR,TRANSFER,False,samsung store,samsung store uk cork,Shopping,6,1,False,False,False,False,False
+TXN_202406_000186,2025-04-01,2025-04-01 06:24:35,433.07,EUR,CONTACTLESS,False,stationery mart,dd stationery mart es,Shopping,6,1,False,False,True,False,False
+TXN_202406_000187,2025-04-02,2025-04-02 12:33:10,611.12,EUR,TRANSFER,True,bank fee,bank bill london,Other,12,2,False,False,False,False,True
+TXN_202406_000188,2025-04-08,2025-04-08 22:18:00,156.29,EUR,ONLINE,True,zara,de trip zara london,Shopping,22,1,False,False,False,False,False
+TXN_202406_000189,2025-04-07,2025-04-07 15:23:06,64.4,EUR,CARD,False,train ticket,london train ticket complete fr in store dublin,Transport,15,0,False,False,False,False,False
+TXN_202406_000190,2025-04-02,2025-04-02 14:56:14,112.49,EUR,TRANSFER,False,car insurance,pur car insurance,Bills,14,2,False,False,False,False,True
+TXN_202406_000191,2025-04-22,2025-04-22 04:26:27,82.82,EUR,CARD,False,charging station,charging station delivery irl,Transport,4,1,False,True,False,False,False
+TXN_202406_000192,2025-04-22,2025-04-22 02:58:10,342.93,EUR,TRANSFER,False,property mgmt,property mgmt trip,Bills,2,1,False,True,False,False,False
+TXN_202406_000193,2025-04-16,2025-04-16 18:51:59,13.78,EUR,ONLINE,False,eir,dublin eir,Bills,18,2,False,False,False,False,False
+TXN_202406_000194,2025-04-17,2025-04-17 23:49:26,175.96,EUR,ONLINE,False,xray clinic,xray clinic uk,Healthcare,23,3,False,False,False,False,True
+TXN_202406_000195,2025-04-29,2025-04-29 16:25:25,11.03,EUR,ONLINE,False,event tickets,event tickets,Entertainment,16,1,False,False,False,True,True
+TXN_202406_000196,2025-04-25,2025-04-25 19:54:57,433.24,EUR,TRANSFER,False,metro pharmacy services,metro pharmacy services lxqwlifnnt,Shopping,19,4,False,False,False,False,True
+TXN_202406_000197,2025-04-17,2025-04-17 19:26:02,12.86,EUR,ONLINE,False,odeon cinema,topup limerick txn odeoncinema topup,Entertainment,19,3,False,False,False,False,True
+TXN_202406_000198,2025-04-13,2025-04-13 00:12:00,48.9,EUR,CARD,False,leap topup,transfer leap topup madrid,Transport,0,6,True,True,False,False,False
+TXN_202406_000199,2025-04-16,2025-04-16 02:54:31,21.17,EUR,CARD,False,hm,paris delivery h&m es,Shopping,2,2,False,True,False,False,True
+TXN_202406_000200,2025-04-03,2025-04-03 21:50:05,99.44,EUR,CONTACTLESS,False,north pharmacy co,bill north pharmacy co web,Other,21,3,False,False,False,False,True
+TXN_202406_000201,2025-04-26,2025-04-26 22:04:16,38.89,EUR,CONTACTLESS,False,transit topup,transittopup de kiosk order de,Transport,22,5,True,False,False,False,False
+TXN_202406_000202,2025-04-10,2025-04-10 22:54:07,731.88,EUR,CONTACTLESS,False,charity donation,madrid charity donation booking dd,Other,22,3,False,False,False,False,False
+TXN_202406_000203,2025-04-01,2025-04-01 01:46:12,20.76,EUR,TRANSFER,False,museum pass,transfer museum pass topup cork,Entertainment,1,1,False,True,True,False,True
+TXN_202406_000204,2025-04-06,2025-04-06 16:40:41,822.58,EUR,TRANSFER,False,physio center,dublin physio center,Healthcare,16,6,True,False,True,False,False
+TXN_202406_000205,2025-04-16,2025-04-16 07:01:43,178.34,EUR,CONTACTLESS,False,mortgage payment,standing order dublin topup mortgage,Bills,7,2,False,False,False,False,False
+TXN_202406_000206,2025-04-27,2025-04-27 23:07:53,368.15,EUR,CONTACTLESS,False,east travel plc,txn east travel plc irl london web order,Shopping,23,6,True,False,False,False,True
+TXN_202406_000207,2025-04-07,2025-04-07 01:28:33,35.49,EUR,CARD,False,new diner inc,in store new diner inc delivery merchant,Food,1,0,False,True,False,False,True
+TXN_202406_000208,2025-04-22,2025-04-22 23:03:05,40.62,EUR,CONTACTLESS,False,health check,healthcheck us settlement,Healthcare,23,1,False,False,False,False,True
+TXN_202406_000209,2025-04-28,2025-04-28 05:59:11,51.2,EUR,ONLINE,False,m toll,toll web standing order,Transport,5,0,False,True,False,False,False
+TXN_202406_000210,2025-04-23,2025-04-23 17:49:16,217.49,EUR,CARD,False,asos,asos mobile pur galway,Shopping,17,2,False,False,False,False,True
+TXN_202406_000211,2025-04-11,2025-04-11 22:49:18,477.41,EUR,ONLINE,False,course payment,direct course bill paris,Other,22,4,False,False,False,False,False
+TXN_202406_000212,2025-04-19,2025-04-19 13:23:32,182.51,EUR,ONLINE,False,car insurance,complete trip car insurance,Bills,13,5,True,False,False,False,False
+TXN_202406_000213,2025-04-01,2025-04-01 13:20:01,45.15,EUR,CONTACTLESS,False,mortgage payment,paris so so mortgage,Bills,13,1,False,False,False,False,False
+TXN_202406_000214,2025-04-09,2025-04-09 14:09:44,86.18,EUR,TRANSFER,False,xray clinic,in store xrayclinic booking uk,Healthcare,14,2,False,False,False,False,False
+TXN_202406_000215,2025-04-15,2025-04-15 09:02:50,41.59,EUR,CONTACTLESS,False,rent payment,rent dublin,Bills,9,1,False,False,False,False,False
+TXN_202406_000216,2025-04-06,2025-04-06 13:28:55,281.9,EUR,TRANSFER,False,health check,dd health check bill paris,Healthcare,13,6,True,False,False,True,False
+TXN_202406_000217,2025-04-08,2025-04-08 02:42:14,49.33,EUR,CARD,False,burger king,in store burger king booking uk,Food,2,1,False,True,False,False,False
+TXN_202406_000218,2025-04-16,2025-04-16 02:55:48,179.85,EUR,ONLINE,False,payment adjustment,adjustment galway,Other,2,2,False,True,False,False,True
+TXN_202406_000219,2025-04-27,2025-04-27 15:38:58,96.56,EUR,ONLINE,False,luas,in store luas delivery,Transport,15,6,True,False,False,False,False
+TXN_202406_000220,2025-04-01,2025-04-01 06:48:54,387.99,EUR,TRANSFER,False,gp consult,gp consult ie,Healthcare,6,1,False,False,False,False,False
+TXN_202406_000221,2025-04-01,2025-04-01 16:06:07,130.27,EUR,CONTACTLESS,False,nike,ie cork nike,Shopping,16,1,False,False,False,True,True
+TXN_202406_000222,2025-04-26,2025-04-26 15:59:36,47.38,EUR,ONLINE,False,theatre house,theatre house commission,Entertainment,15,5,True,False,False,False,True
+TXN_202406_000223,2025-04-15,2025-04-15 01:43:56,142.41,EUR,TRANSFER,False,penneys,mobile penneys fr,Shopping,1,1,False,True,False,False,False
+TXN_202406_000224,2025-04-17,2025-04-17 07:17:32,538.24,EUR,ONLINE,False,atm withdrawal,app atm withdrawal es commission irl irl es irl,Other,7,3,False,False,False,False,False
+TXN_202406_000225,2025-04-08,2025-04-08 07:45:30,42.69,EUR,ONLINE,False,coffee roasters,web coffee roasters,Food,7,1,False,False,False,False,False
+TXN_202406_000226,2025-04-19,2025-04-19 21:34:27,265.94,EUR,CARD,False,dental hygiene,bill merchant pur dental hygiene commission,Healthcare,21,5,True,False,False,True,True
+TXN_202406_000227,2025-04-15,2025-04-15 02:00:33,41.29,EUR,TRANSFER,False,irish rail,in store irish rail order galway ie dublin dublin,Transport,2,1,False,True,False,False,True
+TXN_202406_000228,2025-04-30,2025-04-30 04:03:27,61.94,EUR,TRANSFER,False,uniqlo,uniqlo ojdyua,Shopping,4,2,False,True,False,False,True
+TXN_202406_000229,2025-04-16,2025-04-16 04:33:40,791.39,EUR,ONLINE,False,interest charge,delivery london pur interestcharge,Other,4,2,False,True,False,False,False
+TXN_202406_000230,2025-04-15,2025-04-15 16:49:39,65.43,EUR,TRANSFER,False,cinema world,ie jntssqa pur cinemaworld,Entertainment,16,1,False,False,False,False,True
+TXN_202406_000231,2025-04-10,2025-04-10 14:30:46,26.17,EUR,ONLINE,False,nike,so mobile nike cork,Shopping,14,3,False,False,True,True,False
+TXN_202406_000232,2025-04-18,2025-04-18 09:11:27,69.49,EUR,TRANSFER,False,google store,google store limerick,Shopping,9,4,False,False,False,False,True
+TXN_202406_000233,2025-04-27,2025-04-27 18:40:16,43.76,EUR,ONLINE,False,decathlon,decathlon paris uk txn txn,Shopping,18,6,True,False,False,False,True
+TXN_202406_000234,2025-04-16,2025-04-16 18:40:30,796.68,EUR,TRANSFER,True,misc payment,direct misc uk,Other,18,2,False,False,False,False,True
+TXN_202406_000235,2025-04-12,2025-04-12 13:00:54,62.54,EUR,CARD,False,tv license,tv license tv license tv license settlement bill us complete pur paris,Bills,13,5,True,False,False,False,True
+TXN_202406_000236,2025-04-25,2025-04-25 14:27:28,301.11,EUR,CONTACTLESS,False,paypal,paypal,Other,14,4,False,False,False,False,False
+TXN_202406_000237,2025-04-29,2025-04-29 07:34:35,67.65,EUR,CONTACTLESS,False,gym membership,gym membership standing order,Bills,7,1,False,False,False,False,True
+TXN_202406_000238,2025-04-26,2025-04-26 10:43:49,53.18,EUR,TRANSFER,False,epic games,in store epic games topup limerick fr commission eicuusyx,Entertainment,10,5,True,False,False,False,True
+TXN_202406_000239,2025-04-14,2025-04-14 14:08:57,90.32,EUR,CARD,True,global outlet ireland,globaloutletireland order es,Transport,14,0,False,False,False,False,True
+TXN_202406_000240,2025-04-28,2025-04-28 11:00:36,695.61,EUR,TRANSFER,False,card verification,verification,Other,11,0,False,False,False,False,False
+TXN_202406_000241,2025-04-21,2025-04-21 17:19:13,309.92,EUR,CARD,False,course payment,order txn course app,Other,17,0,False,False,False,False,False
+TXN_202406_000242,2025-04-02,2025-04-02 22:04:01,352.55,EUR,CONTACTLESS,False,pharmacy plus,pharmacy plus,Healthcare,22,2,False,False,False,False,False
+TXN_202406_000243,2025-04-22,2025-04-22 01:26:03,55.76,EUR,CARD,False,kfc,kfc app,Food,1,1,False,True,False,False,False
+TXN_202406_000244,2025-04-23,2025-04-23 17:09:29,301.93,EUR,TRANSFER,False,the home store,thehomestore fr so trip,Shopping,17,2,False,False,False,False,False
+TXN_202406_000245,2025-04-12,2025-04-12 08:11:27,350.06,EUR,CONTACTLESS,False,wise transfer,uk wise transfer,Other,8,5,True,False,False,False,False
+TXN_202406_000246,2025-04-07,2025-04-07 22:02:47,163.15,EUR,CONTACTLESS,False,walgreens,dublin walgreens delivery,Healthcare,22,0,False,False,False,True,True
+TXN_202406_000247,2025-04-14,2025-04-14 02:27:40,225.58,EUR,CONTACTLESS,False,dunnes stores,paris dunnes stores ie,Shopping,2,0,False,True,False,False,False
+TXN_202406_000248,2025-04-15,2025-04-15 16:45:37,214.85,EUR,CONTACTLESS,False,vaccination,in store vaccination ie,Healthcare,16,1,False,False,False,False,True
+TXN_202406_000249,2025-04-26,2025-04-26 03:10:29,54.11,EUR,CONTACTLESS,False,pret a manger,pret manger cork bill pret manger,Food,3,5,True,True,False,False,False
+TXN_202406_000250,2025-04-07,2025-04-07 03:43:25,314.15,EUR,CONTACTLESS,False,hm,h&m berlin de irl,Shopping,3,0,False,True,True,False,False
+TXN_202406_000251,2025-04-28,2025-04-28 15:04:23,22.14,EUR,CONTACTLESS,True,event tickets,mobile dublin bill madrid event tickets,Entertainment,15,0,False,False,False,False,False
+TXN_202406_000252,2025-04-02,2025-04-02 09:50:58,101.93,EUR,ONLINE,False,property mgmt,nl settlement property mgmt madrid so commission,Bills,9,2,False,False,False,False,False
+TXN_202406_000253,2025-04-23,2025-04-23 09:11:21,4.82,EUR,ONLINE,False,apcoa parking,mobile apcoa parking galway,Transport,9,2,False,False,False,False,False
+TXN_202406_000254,2025-04-14,2025-04-14 21:17:02,151.06,EUR,CARD,False,north cafe services,kiosk north cafe services de,Bills,21,0,False,False,False,False,True
+TXN_202406_000255,2025-04-10,2025-04-10 06:46:08,124.09,EUR,CARD,False,ikea,ikea order dd,Shopping,6,3,False,False,False,True,True
+TXN_202406_000256,2025-04-20,2025-04-20 23:34:39,31.49,EUR,TRANSFER,False,taco bell,kiosk taco bell order paris irl,Food,23,6,True,False,False,False,False
+TXN_202406_000257,2025-04-29,2025-04-29 04:20:05,22.8,EUR,CONTACTLESS,False,taco bell,so app taco bell dublin,Food,4,1,False,True,False,False,False
+TXN_202406_000258,2025-04-16,2025-04-16 19:10:17,447.6,EUR,CONTACTLESS,False,penneys,penneys limerick merchant complete,Shopping,19,2,False,False,False,False,False
+TXN_202406_000259,2025-04-21,2025-04-21 03:11:53,139.35,EUR,ONLINE,False,electric ireland,irl dublin delivery electric ireland,Bills,3,0,False,True,False,False,False
+TXN_202406_000260,2025-04-01,2025-04-01 05:19:02,6.3,EUR,TRANSFER,False,pret a manger,pret manger,Food,5,1,False,True,False,False,False
+TXN_202406_000261,2025-04-19,2025-04-19 16:25:42,305.18,EUR,ONLINE,False,online shop,onlineshop delivery,Shopping,16,5,True,False,False,False,True
+TXN_202406_000262,2025-04-19,2025-04-19 10:30:41,98.02,EUR,CONTACTLESS,False,leap topup,mobile leap topup es,Transport,10,5,True,False,False,False,False
+TXN_202406_000263,2025-04-20,2025-04-20 20:48:28,15.62,EUR,ONLINE,True,steam,steam cork,Entertainment,20,6,True,False,False,False,True
+TXN_202406_000264,2025-04-03,2025-04-03 16:18:08,10.36,EUR,CARD,False,grocery deli,grocery deli fr ie,Food,16,3,False,False,False,True,False
+TXN_202406_000265,2025-04-20,2025-04-20 02:30:05,24.61,EUR,CONTACTLESS,True,juice bar,juice bar dublin,Food,2,6,True,True,False,False,True
+TXN_202406_000266,2025-04-19,2025-04-19 14:15:03,31.73,EUR,CONTACTLESS,False,mri scan,mri scan settlement topup,Healthcare,14,5,True,False,False,False,False
+TXN_202406_000267,2025-04-22,2025-04-22 09:24:28,56.17,EUR,TRANSFER,False,coffee roasters,coffee roasters cork,Food,9,1,False,False,False,False,False
+TXN_202406_000268,2025-04-10,2025-04-10 16:30:36,315.6,EUR,CARD,False,lidl,delivery lidl settlement,Shopping,16,3,False,False,False,False,True
+TXN_202406_000269,2025-04-16,2025-04-16 19:01:51,25.0,EUR,TRANSFER,False,indian spice,indian spice ie web dublin limerick,Food,19,2,False,False,False,False,True
+TXN_202406_000270,2025-04-07,2025-04-07 18:44:41,46.43,EUR,TRANSFER,False,juice bar,juice bar bill dublin,Food,18,0,False,False,False,False,False
+TXN_202406_000271,2025-04-19,2025-04-19 20:02:12,240.89,EUR,CONTACTLESS,False,cash withdrawal,dd cash withdrawal limerick,Other,20,5,True,False,False,True,False
+TXN_202406_000272,2025-04-25,2025-04-25 05:15:43,211.73,EUR,TRANSFER,False,hm,h&m order london,Shopping,5,4,False,True,False,False,False
+TXN_202406_000273,2025-04-25,2025-04-25 10:28:03,52.16,EUR,CONTACTLESS,False,taco bell,transfer taco bell order,Food,10,4,False,False,False,False,False
+TXN_202406_000274,2025-04-08,2025-04-08 21:02:14,252.53,EUR,TRANSFER,False,vodafone,vodafone pur booking,Bills,21,1,False,False,False,False,False
+TXN_202406_000275,2025-04-24,2025-04-24 07:45:08,37.01,EUR,CONTACTLESS,True,brunch house,brunch house irl,Food,7,3,False,False,False,False,False
+TXN_202406_000276,2025-04-01,2025-04-01 04:25:38,30.28,EUR,TRANSFER,False,taco bell,in store tacobell order madrid merchant,Food,4,1,False,True,False,False,False
+TXN_202406_000277,2025-04-04,2025-04-04 16:20:23,4.68,EUR,ONLINE,False,event tickets,mobile event tickets limerick,Entertainment,16,4,False,False,False,False,False
+TXN_202406_000278,2025-04-05,2025-04-05 10:26:03,645.71,EUR,CARD,False,transfer out,uk mobile so uk uk transferout madrid,Other,10,5,True,False,False,False,True
+TXN_202406_000279,2025-04-13,2025-04-13 20:11:21,23.56,EUR,ONLINE,True,pret a manger,standing order in store pret manger irl commission,Food,20,6,True,False,False,False,False
+TXN_202406_000280,2025-04-29,2025-04-29 03:48:26,426.06,EUR,CONTACTLESS,True,aldi,aldi topup settlement,Shopping,3,1,False,True,False,False,True
+TXN_202406_000281,2025-04-05,2025-04-05 18:18:23,10.18,EUR,ONLINE,False,starbucks,irl starbucks zdxcai trip,Food,18,5,True,False,False,False,True
+TXN_202406_000282,2025-04-17,2025-04-17 21:50:04,185.71,EUR,CARD,False,service charge,service charge booking dublin nl settlement commission commission,Bills,21,3,False,False,False,False,False
+TXN_202406_000283,2025-04-07,2025-04-07 10:46:00,61.46,EUR,CONTACTLESS,False,gig tickets,direct gig tickets order berlin,Entertainment,10,0,False,False,False,False,True
+TXN_202406_000284,2025-04-15,2025-04-15 21:09:57,91.59,EUR,ONLINE,False,free now,dublin irl standing order free now commission free now,Transport,21,1,False,False,False,False,False
+TXN_202406_000285,2025-04-01,2025-04-01 18:25:51,258.28,EUR,CARD,False,utility payment,utility utility transfer booking settlement berlin,Bills,18,1,False,False,False,False,True
+TXN_202406_000286,2025-04-11,2025-04-11 20:23:40,7.64,EUR,ONLINE,False,nandos,mobile complete ie nando's,Food,20,4,False,False,False,False,False
+TXN_202406_000287,2025-04-25,2025-04-25 18:22:59,39.24,EUR,ONLINE,False,coffee roasters,coffee roasters london,Food,18,4,False,False,False,False,False
+TXN_202406_000288,2025-04-10,2025-04-10 01:44:42,14.68,EUR,CONTACTLESS,False,thai kitchen,thai kitchen order,Food,1,3,False,True,False,False,False
+TXN_202406_000289,2025-04-03,2025-04-03 10:55:30,60.83,EUR,CONTACTLESS,False,toll road,kiosk toll road delivery,Transport,10,3,False,False,False,False,False
+TXN_202406_000290,2025-04-02,2025-04-02 17:09:12,42.24,EUR,ONLINE,False,new diner inc,kiosk newdinerinc us commission,Food,17,2,False,False,False,False,False
+TXN_202406_000291,2025-04-07,2025-04-07 02:58:43,8.73,EUR,CARD,False,odeon cinema,odeon cinema,Entertainment,2,0,False,True,False,False,False
+TXN_202406_000292,2025-04-21,2025-04-21 03:48:43,290.43,EUR,TRANSFER,False,north bakery ltd,limerick bill north bakery ltd,Healthcare,3,0,False,True,False,False,True
+TXN_202406_000293,2025-04-29,2025-04-29 20:04:15,8.65,EUR,ONLINE,False,costa coffee,costa coffee,Food,20,1,False,False,False,False,False
+TXN_202406_000294,2025-04-29,2025-04-29 23:51:14,85.93,EUR,ONLINE,False,electric ireland,dd electricireland limerick,Bills,23,1,False,False,False,False,False
+TXN_202406_000295,2025-04-01,2025-04-01 10:45:57,222.25,EUR,TRANSFER,False,car insurance,in store car insurance ie,Bills,10,1,False,False,False,False,False
+TXN_202406_000296,2025-04-05,2025-04-05 10:28:27,56.64,EUR,CARD,False,global bakery ltd,global bakery ltd so topup dublin,Entertainment,10,5,True,False,False,False,True
+TXN_202406_000297,2025-04-25,2025-04-25 14:20:36,59.49,EUR,TRANSFER,True,west electrics eu,direct west electrics eu dublin dublin,Entertainment,14,4,False,False,False,False,True
+TXN_202406_000298,2025-04-10,2025-04-10 12:15:30,156.71,EUR,CARD,False,uniqlo,direct uniqlo,Shopping,12,3,False,False,False,True,False
+TXN_202406_000299,2025-04-23,2025-04-23 22:04:42,35.12,EUR,ONLINE,False,dominos,web dominos,Food,22,2,False,False,False,False,False
+TXN_202406_000300,2025-04-23,2025-04-23 08:50:59,448.54,EUR,CARD,False,pharmacy plus,so web pharmacy plus dublin txn dublin,Healthcare,8,2,False,False,False,False,False
+TXN_202406_000301,2025-04-12,2025-04-12 14:27:06,736.86,EUR,TRANSFER,False,transfer in,cork topup topup transfer in,Other,14,5,True,False,False,False,False
+TXN_202406_000302,2025-04-10,2025-04-10 05:31:19,31.33,EUR,CONTACTLESS,False,city bakery plc,dd city bakery plc order london,Food,5,3,False,True,False,False,True
+TXN_202406_000303,2025-04-16,2025-04-16 00:16:00,325.82,EUR,TRANSFER,True,urban pharmacy eu,so in store urban pharmacy eu booking galway nl settlement,Bills,0,2,False,True,False,False,True
+TXN_202406_000304,2025-04-05,2025-04-05 03:38:39,530.1,EUR,CONTACTLESS,False,foreign exchange,pur foreign madrid,Other,3,5,True,True,False,False,False
+TXN_202406_000305,2025-04-03,2025-04-03 21:22:56,115.82,EUR,CONTACTLESS,True,transit topup,transittopup us settlement,Transport,21,3,False,False,False,False,False
+TXN_202406_000306,2025-04-05,2025-04-05 03:42:32,117.02,EUR,TRANSFER,False,urban clinic ireland,urban clinic ireland galway,Transport,3,5,True,True,False,True,True
+TXN_202406_000307,2025-04-05,2025-04-05 10:14:32,52.79,EUR,CARD,False,costa coffee,direct costacoffee,Food,10,5,True,False,False,False,False
+TXN_202406_000308,2025-04-08,2025-04-08 07:03:39,268.66,EUR,TRANSFER,False,insurance premium,fr insurance premium,Bills,7,1,False,False,False,False,False
+TXN_202406_000309,2025-04-15,2025-04-15 04:46:42,92.35,EUR,ONLINE,True,green outlet ireland,dublin green outlet ireland nl settlement,Transport,4,1,False,True,False,False,True
+TXN_202406_000310,2025-04-09,2025-04-09 19:53:08,110.52,EUR,CARD,False,shell fuel,cork shell fuel nl order so,Transport,19,2,False,False,False,False,False
+TXN_202406_000311,2025-04-25,2025-04-25 12:17:51,83.47,EUR,CONTACTLESS,False,etsy,irl etsy,Shopping,12,4,False,False,False,False,False
+TXN_202406_000312,2025-04-25,2025-04-25 12:32:45,63.04,EUR,CARD,False,zara,zara uk zara,Shopping,12,4,False,False,False,False,False
+TXN_202406_000313,2025-04-11,2025-04-11 03:13:14,269.52,EUR,CONTACTLESS,False,boots,trip in store boots limerick,Healthcare,3,4,False,True,False,False,True
+TXN_202406_000314,2025-04-23,2025-04-23 13:42:19,50.57,EUR,ONLINE,False,mcdonalds,mcdonalds madrid,Food,13,2,False,False,False,False,True
+TXN_202406_000315,2025-04-16,2025-04-16 09:58:48,1174.2,EUR,ONLINE,False,bookshop,bookshop paris settlement direct,Shopping,9,2,False,False,True,False,False
+TXN_202406_000316,2025-04-13,2025-04-13 12:14:30,11.83,EUR,CONTACTLESS,False,amazon,amazon standing order amazon amazon amazon,Shopping,12,6,True,False,False,False,False
+TXN_202406_000317,2025-04-08,2025-04-08 18:20:15,297.08,EUR,CONTACTLESS,True,harvey norman,settlement settlement standing order berlin harvey norman,Shopping,18,1,False,False,False,False,True
+TXN_202406_000318,2025-04-12,2025-04-12 01:04:56,55.18,EUR,ONLINE,False,parking meter,standing order gcnaykyn parking meter,Transport,1,5,True,True,False,False,False
+TXN_202406_000319,2025-04-15,2025-04-15 02:37:26,390.83,EUR,CONTACTLESS,True,ikea,ikea topup berlin merchant,Shopping,2,1,False,True,False,False,False
+TXN_202406_000320,2025-04-05,2025-04-05 09:43:52,142.0,EUR,TRANSFER,False,health check,health check topup dublin,Healthcare,9,5,True,False,False,False,False
+TXN_202406_000321,2025-04-26,2025-04-26 10:28:25,51.16,EUR,ONLINE,True,bolt,bolt commission,Transport,10,5,True,False,False,False,False
+TXN_202406_000322,2025-04-16,2025-04-16 17:31:15,679.46,EUR,CONTACTLESS,False,green pharmacy ltd,green pharmacy ltd,Other,17,2,False,False,False,False,True
+TXN_202406_000323,2025-04-16,2025-04-16 09:04:51,24.21,EUR,CARD,False,bistro,pur bistro berlin,Food,9,2,False,False,False,False,True
+TXN_202406_000324,2025-04-04,2025-04-04 05:49:23,113.55,EUR,TRANSFER,False,broadband bill,broadband bill nl delivery,Bills,5,4,False,True,False,False,False
+TXN_202406_000325,2025-04-22,2025-04-22 14:50:41,515.66,EUR,CONTACTLESS,False,course payment,mobile course merchant direct merchant,Other,14,1,False,False,False,False,False
+TXN_202406_000326,2025-04-07,2025-04-07 11:38:18,321.89,EUR,ONLINE,False,electric bill,electric bill commission,Bills,11,0,False,False,False,False,False
+TXN_202406_000327,2025-04-14,2025-04-14 08:20:08,39.98,EUR,CARD,False,charging station,trip dd dublin nl charging station,Transport,8,0,False,False,False,False,False
+TXN_202406_000328,2025-04-25,2025-04-25 21:42:20,526.42,EUR,ONLINE,False,atm withdrawal,atmwithdrawal uk dublin dublin,Other,21,4,False,False,False,False,False
+TXN_202406_000329,2025-04-14,2025-04-14 12:17:32,40.33,EUR,CARD,False,burger king,web topup burger king dd,Food,12,0,False,False,False,False,False
+TXN_202406_000330,2025-04-24,2025-04-24 05:18:22,43.39,EUR,CONTACTLESS,False,aldi,aldi dd booking nl,Shopping,5,3,False,True,False,False,False
+TXN_202406_000331,2025-04-05,2025-04-05 17:16:56,390.07,EUR,CARD,True,spar,spar ie spar irl kiosk delivery direct direct,Shopping,17,5,True,False,False,False,True
+TXN_202406_000332,2025-04-26,2025-04-26 19:42:34,55.43,EUR,ONLINE,False,scooter rental,kiosk scooterrental galway irl,Transport,19,5,True,False,False,False,True
+TXN_202406_000333,2025-04-27,2025-04-27 06:30:04,74.62,EUR,ONLINE,False,mobile bill,mobilebill topup ie complete dublin,Bills,6,6,True,False,False,False,False
+TXN_202406_000334,2025-04-28,2025-04-28 18:06:49,177.62,EUR,CONTACTLESS,False,dominos,dominos,Food,18,0,False,False,True,False,False
+TXN_202406_000335,2025-04-29,2025-04-29 21:35:58,35.59,EUR,CARD,False,museum pass,museum pass bill ie complete,Entertainment,21,1,False,False,False,False,False
+TXN_202406_000336,2025-04-29,2025-04-29 14:08:27,67.59,EUR,ONLINE,False,green clinic ltd,green clinic ltd bill ikpdxki,Bills,14,1,False,False,False,False,True
+TXN_202406_000337,2025-04-18,2025-04-18 22:57:14,40.61,EUR,CARD,False,wendys,order limerick wendys,Food,22,4,False,False,False,False,True
+TXN_202406_000338,2025-04-06,2025-04-06 18:14:58,290.19,EUR,ONLINE,False,interest charge,galway interest charge de,Other,18,6,True,False,False,True,False
+TXN_202406_000339,2025-04-04,2025-04-04 12:53:28,166.49,EUR,ONLINE,False,urban bakery co,urban bakery co galway pur bill,Bills,12,4,False,False,False,False,True
+TXN_202406_000340,2025-04-26,2025-04-26 06:50:25,42.29,EUR,TRANSFER,False,bowling alley,berlin berlin berlin transfer bowling alley,Entertainment,6,5,True,False,False,False,False
+TXN_202406_000341,2025-04-10,2025-04-10 11:40:54,33.84,EUR,CONTACTLESS,True,charging station,charging station uk uk,Transport,11,3,False,False,False,False,False
+TXN_202406_000342,2025-04-02,2025-04-02 08:32:52,40.29,EUR,CONTACTLESS,False,coffee roasters,coffeeroasters delivery berlin irl delivery,Food,8,2,False,False,False,False,False
+TXN_202406_000343,2025-04-26,2025-04-26 11:10:39,51.27,EUR,TRANSFER,False,hulu,hulu galway irl,Entertainment,11,5,True,False,False,False,True
+TXN_202406_000344,2025-04-17,2025-04-17 22:37:21,59.42,EUR,CONTACTLESS,False,the home store,direct the home store es,Shopping,22,3,False,False,False,False,False
+TXN_202406_000345,2025-04-20,2025-04-20 06:50:11,24.17,EUR,CARD,False,the outlet co,dublin the outlet co order,Bills,6,6,True,False,False,False,True
+TXN_202406_000346,2025-04-25,2025-04-25 08:25:42,58.97,EUR,ONLINE,False,taco bell,bill taco bell berlin,Food,8,4,False,False,False,False,False
+TXN_202406_000347,2025-04-21,2025-04-21 21:26:58,301.9,EUR,ONLINE,True,south market ltd,south market ltd pur bill web,Shopping,21,0,False,False,False,False,True
+TXN_202406_000348,2025-04-15,2025-04-15 06:06:29,80.24,EUR,CONTACTLESS,False,lyft,lyft paris,Transport,6,1,False,False,False,False,False
+TXN_202406_000349,2025-04-09,2025-04-09 00:56:49,411.23,EUR,CONTACTLESS,False,penneys,penneys in store dd topup galway,Shopping,0,2,False,True,False,False,False
+TXN_202406_000350,2025-04-30,2025-04-30 00:12:23,156.54,EUR,CARD,False,car insurance,trip cork merchant car insurance,Bills,0,2,False,True,False,False,False
+TXN_202406_000351,2025-04-01,2025-04-01 21:10:14,116.22,EUR,CARD,False,metro bus,metro bus bill ie merchant merchant txn,Transport,21,1,False,False,False,False,False
+TXN_202406_000352,2025-04-02,2025-04-02 18:57:46,41.19,EUR,CONTACTLESS,False,mri scan,mriscan direct,Healthcare,18,2,False,False,False,False,False
+TXN_202406_000353,2025-04-20,2025-04-20 13:15:13,68.83,EUR,CARD,False,uber,uber topup madrid,Transport,13,6,True,False,False,False,False
+TXN_202406_000354,2025-04-23,2025-04-23 16:31:55,316.79,EUR,CARD,False,south bakery inc,es south bakery inc cork web,Shopping,16,2,False,False,False,False,True
+TXN_202406_000355,2025-04-19,2025-04-19 08:47:38,236.5,EUR,ONLINE,False,course payment,de course topup,Other,8,5,True,False,False,False,False
+TXN_202406_000356,2025-04-25,2025-04-25 14:14:07,55.48,EUR,TRANSFER,False,internet provider,direct mobile internetprovider order cork ie,Bills,14,4,False,False,False,False,False
+TXN_202406_000357,2025-04-12,2025-04-12 19:50:27,134.52,EUR,TRANSFER,False,gas networks,web gas networks delivery uk,Bills,19,5,True,False,False,False,False
+TXN_202406_000358,2025-04-19,2025-04-19 08:02:04,43.42,EUR,CONTACTLESS,False,tesco,tesco settlement commission,Shopping,8,5,True,False,False,False,True
+TXN_202406_000359,2025-04-07,2025-04-07 07:23:11,29.12,EUR,TRANSFER,False,grocery deli,mobile grocery deli es mobile mobile,Food,7,0,False,False,False,False,False
+TXN_202406_000360,2025-04-03,2025-04-03 03:22:34,55.37,EUR,TRANSFER,False,coffee roasters,merchant ie london mobile coffee roasters,Food,3,3,False,True,False,False,False
+TXN_202406_000361,2025-04-20,2025-04-20 05:54:50,125.06,EUR,CARD,False,service charge,transfer servicecharge madrid ynhfkug,Bills,5,6,True,True,False,False,False
+TXN_202406_000362,2025-04-24,2025-04-24 15:30:58,711.02,EUR,CARD,False,fintech topup,fintech topup madrid ie,Other,15,3,False,False,False,False,False
+TXN_202406_000363,2025-04-18,2025-04-18 22:12:26,104.54,EUR,ONLINE,False,bolt,ie bolt madrid de,Transport,22,4,False,False,False,True,False
+TXN_202406_000364,2025-04-30,2025-04-30 08:02:39,260.6,EUR,CARD,False,tv license,tv license madrid complete,Bills,8,2,False,False,False,False,False
+TXN_202406_000365,2025-04-02,2025-04-02 03:31:08,33.66,EUR,CARD,False,dominos,dominos bill london settlement ie,Food,3,2,False,True,False,False,False
+TXN_202406_000366,2025-04-10,2025-04-10 07:44:51,3.23,EUR,ONLINE,False,patreon,patreon limerick booking,Entertainment,7,3,False,False,False,False,True
+TXN_202406_000367,2025-04-09,2025-04-09 14:25:54,177.38,EUR,ONLINE,True,dunnes stores,dunnesstores settlement,Shopping,14,2,False,False,False,False,False
+TXN_202406_000368,2025-04-07,2025-04-07 13:57:07,365.06,EUR,ONLINE,True,walgreens,mobile walgreens,Healthcare,13,0,False,False,False,False,False
+TXN_202406_000369,2025-04-12,2025-04-12 12:27:53,50.55,EUR,ONLINE,False,green market co,galway irl standing order kiosk standing order booking green market co,Entertainment,12,5,True,False,False,False,True
+TXN_202406_000370,2025-04-26,2025-04-26 04:14:57,667.96,EUR,TRANSFER,False,bank fee,bank fr,Other,4,5,True,True,False,False,False
+TXN_202406_000371,2025-04-07,2025-04-07 15:27:57,8.57,EUR,ONLINE,True,nike,fr nike,Shopping,15,0,False,False,False,False,False
+TXN_202406_000372,2025-04-21,2025-04-21 05:44:23,370.38,EUR,CONTACTLESS,False,utility payment,direct utility galway de,Bills,5,0,False,True,True,False,False
+TXN_202406_000373,2025-04-17,2025-04-17 01:49:53,66.71,EUR,CONTACTLESS,False,local store,us limerick local store,Shopping,1,3,False,True,False,False,False
+TXN_202406_000374,2025-04-10,2025-04-10 06:16:57,210.13,EUR,CONTACTLESS,False,bank fee,bank,Other,6,3,False,False,False,False,False
+TXN_202406_000375,2025-04-25,2025-04-25 15:58:22,92.82,EUR,TRANSFER,False,dart,dart delivery cork irl irl dart delivery cork,Transport,15,4,False,False,False,False,False
+TXN_202406_000376,2025-04-26,2025-04-26 06:34:18,341.39,EUR,TRANSFER,False,tv license,standing order tv license nl,Bills,6,5,True,False,False,False,False
+TXN_202406_000377,2025-04-22,2025-04-22 17:40:19,76.08,EUR,CONTACTLESS,True,m toll,kiosk toll topup complete complete complete kiosk,Transport,17,1,False,False,False,False,False
+TXN_202406_000378,2025-04-02,2025-04-02 17:07:54,42.05,EUR,TRANSFER,False,city taxi,madrid merchant madrid pur city taxi city taxi,Transport,17,2,False,False,False,False,True
+TXN_202406_000379,2025-04-26,2025-04-26 09:30:02,23.56,EUR,TRANSFER,False,brunch house,brunch house,Food,9,5,True,False,False,False,False
+TXN_202406_000380,2025-04-23,2025-04-23 14:20:11,461.85,EUR,CONTACTLESS,False,online shop,shop de,Shopping,14,2,False,False,False,False,False
+TXN_202406_000381,2025-04-27,2025-04-27 16:54:51,144.91,EUR,CARD,False,mobile bill,mobile bill dublin fr dublin,Bills,16,6,True,False,False,False,False
+TXN_202406_000382,2025-04-24,2025-04-24 02:01:12,251.17,EUR,CARD,False,south diner plc,south diner plc nl,Shopping,2,3,False,True,False,False,True
+TXN_202406_000383,2025-04-15,2025-04-15 01:40:09,143.41,EUR,ONLINE,False,broadband bill,broadband bill booking,Bills,1,1,False,True,False,False,False
+TXN_202406_000384,2025-04-04,2025-04-04 04:59:49,3.69,EUR,TRANSFER,False,shake shack,shake shack limerick commission nhdaugmy,Food,4,4,False,True,False,False,False
+TXN_202406_000385,2025-04-01,2025-04-01 00:00:59,419.26,EUR,ONLINE,False,amazon,limerick amazon irl,Shopping,0,1,False,True,False,False,False
+TXN_202406_000386,2025-04-14,2025-04-14 23:38:38,5.13,EUR,CARD,False,decathlon,decathlon order,Shopping,23,0,False,False,False,False,False
+TXN_202406_000387,2025-04-22,2025-04-22 20:35:55,35.86,EUR,CONTACTLESS,False,pret a manger,so pret manger paris kiosk,Food,20,1,False,False,False,False,False
+TXN_202406_000388,2025-04-03,2025-04-03 11:47:18,109.82,EUR,ONLINE,False,broadband bill,es berlin standing order broadband bill,Bills,11,3,False,False,False,False,False
+TXN_202406_000389,2025-04-05,2025-04-05 21:15:52,53.21,EUR,CONTACTLESS,False,mortgage payment,mortgagepayment es ie ie,Bills,21,5,True,False,False,False,False
+TXN_202406_000390,2025-04-20,2025-04-20 00:17:16,49.69,EUR,ONLINE,False,online shop,shop limerick irl txn irl,Shopping,0,6,True,True,False,False,False
+TXN_202406_000391,2025-04-10,2025-04-10 21:55:11,49.75,EUR,ONLINE,False,coffee roasters,us direct coffee roasters,Food,21,3,False,False,False,False,False
+TXN_202406_000392,2025-04-03,2025-04-03 14:38:07,321.16,EUR,CONTACTLESS,False,govt service,govt service trip dublin standing order kiosk,Other,14,3,False,False,False,False,False
+TXN_202406_000393,2025-04-01,2025-04-01 10:19:59,428.72,EUR,CONTACTLESS,False,adidas,adidas txn standing order,Shopping,10,1,False,False,False,False,False
+TXN_202406_000394,2025-04-28,2025-04-28 07:15:24,89.5,EUR,ONLINE,False,atm withdrawal,so atm withdrawal web,Other,7,0,False,False,False,False,False
+TXN_202406_000395,2025-04-07,2025-04-07 23:03:26,224.39,EUR,CARD,False,insurance premium,insurance premium trip,Bills,23,0,False,False,False,False,False
+TXN_202406_000396,2025-04-13,2025-04-13 17:25:10,68.67,EUR,CONTACTLESS,False,north electrics group,standing order mobile north electrics group berlin commission berlin,Transport,17,6,True,False,False,False,True
+TXN_202406_000397,2025-04-30,2025-04-30 07:41:28,411.2,EUR,CARD,False,west cafe ireland,us west cafe ireland,Healthcare,7,2,False,False,False,False,True
+TXN_202406_000398,2025-04-16,2025-04-16 18:27:06,34.71,EUR,CONTACTLESS,False,transit topup,standing order transit topup booking commission,Transport,18,2,False,False,False,True,False
+TXN_202406_000399,2025-04-16,2025-04-16 07:27:47,608.6,EUR,TRANSFER,False,interest charge,interest charge bill irl,Other,7,2,False,False,False,True,False
+TXN_202406_000400,2025-04-04,2025-04-04 22:25:31,314.71,EUR,CONTACTLESS,True,gym membership,mobile gym membership order,Bills,22,4,False,False,False,False,False
+TXN_202406_000401,2025-04-21,2025-04-21 18:32:44,179.51,EUR,TRANSFER,False,amazon,amazon nl irl,Shopping,18,0,False,False,False,False,False
+TXN_202406_000402,2025-04-24,2025-04-24 03:55:10,49.5,EUR,CARD,False,scooter rental,pur scooter rental order,Transport,3,3,False,True,True,False,False
+TXN_202406_000403,2025-04-20,2025-04-20 23:07:31,3.36,EUR,ONLINE,False,food truck,food truck,Food,23,6,True,False,False,False,False
+TXN_202406_000404,2025-04-07,2025-04-07 09:34:50,145.37,EUR,CONTACTLESS,False,harvey norman,harvey norman settlement,Shopping,9,0,False,False,False,False,False
+TXN_202406_000405,2025-04-08,2025-04-08 08:38:31,669.78,EUR,CONTACTLESS,False,bank fee,so bankfee,Other,8,1,False,False,False,False,False
+TXN_202406_000406,2025-04-14,2025-04-14 17:31:38,7.15,EUR,TRANSFER,False,mcdonalds,so mcdonalds paris,Food,17,0,False,False,False,False,False
+TXN_202406_000407,2025-04-28,2025-04-28 01:52:57,14.71,EUR,CONTACTLESS,True,bookshop,bookshop trip berlin,Shopping,1,0,False,True,False,False,False
+TXN_202406_000408,2025-04-30,2025-04-30 08:42:49,250.26,EUR,TRANSFER,False,fintech topup,direct fintech topup order,Other,8,2,False,False,False,False,False
+TXN_202406_000409,2025-04-27,2025-04-27 03:15:22,3.73,EUR,TRANSFER,False,juice bar,us limerick juicebar,Food,3,6,True,True,False,True,False
+TXN_202406_000410,2025-04-01,2025-04-01 20:09:13,55.17,EUR,CONTACTLESS,False,mobile bill,irl commission app mobile bill berlin delivery irl txn,Bills,20,1,False,False,False,False,False
+TXN_202406_000411,2025-04-20,2025-04-20 15:42:05,91.22,EUR,TRANSFER,False,patreon,patreon complete txn,Entertainment,15,6,True,False,True,False,False
+TXN_202406_000412,2025-04-07,2025-04-07 15:02:45,115.41,EUR,ONLINE,False,loan payment,loan txn,Other,15,0,False,False,False,False,False
+TXN_202406_000413,2025-04-16,2025-04-16 20:30:45,3.3,EUR,CONTACTLESS,False,m toll,app toll txn,Transport,20,2,False,False,False,False,False
+TXN_202406_000414,2025-04-09,2025-04-09 15:47:31,62.06,EUR,CARD,False,global travel plc,global travel plc london,Transport,15,2,False,False,False,False,True
+TXN_202406_000415,2025-04-22,2025-04-22 21:53:58,622.17,EUR,ONLINE,False,payment adjustment,pur complete merchant adjustment,Other,21,1,False,False,False,False,False
+TXN_202406_000416,2025-04-10,2025-04-10 07:15:43,107.1,EUR,CONTACTLESS,False,stationery mart,stationery mart berlin us merchant ttdoiqd,Shopping,7,3,False,False,False,False,False
+TXN_202406_000417,2025-04-29,2025-04-29 08:07:54,234.36,EUR,CARD,False,argos,paris kiosk argos dublin settlement,Shopping,8,1,False,False,False,False,True
+TXN_202406_000418,2025-04-29,2025-04-29 05:59:26,47.7,EUR,TRANSFER,False,cvs pharmacy,cvs pharmacy,Healthcare,5,1,False,True,False,False,True
+TXN_202406_000419,2025-04-16,2025-04-16 20:58:37,544.74,EUR,ONLINE,False,payment adjustment,adjustment commission es,Other,20,2,False,False,False,False,False
+TXN_202406_000420,2025-04-06,2025-04-06 10:44:20,86.68,EUR,ONLINE,False,metro electrics eu,metro electrics eu dublin app order,Transport,10,6,True,False,False,False,True
+TXN_202406_000421,2025-04-09,2025-04-09 01:14:20,129.44,EUR,ONLINE,False,subway,subway cork cork,Food,1,2,False,True,True,False,False
+TXN_202406_000422,2025-04-30,2025-04-30 13:38:53,627.68,EUR,CARD,True,university fees,university fees wysaghw,Other,13,2,False,False,False,False,False
+TXN_202406_000423,2025-04-12,2025-04-12 00:09:43,1428.19,EUR,CARD,False,harvey norman,txn mobile direct ie harvey norman madrid,Shopping,0,5,True,True,True,False,False
+TXN_202406_000424,2025-04-05,2025-04-05 08:06:18,26.45,EUR,CARD,False,grocery deli,bill madrid grocery deli in store,Food,8,5,True,False,False,True,False
+TXN_202406_000425,2025-04-02,2025-04-02 08:52:20,331.84,EUR,CARD,False,boots,boots uk,Healthcare,8,2,False,False,False,False,False
+TXN_202406_000426,2025-04-20,2025-04-20 18:19:25,392.23,EUR,ONLINE,False,the home store,the home store trip,Shopping,18,6,True,False,False,False,False
+TXN_202406_000427,2025-04-15,2025-04-15 05:27:29,338.13,EUR,TRANSFER,False,rent payment,rent london de london,Bills,5,1,False,True,False,False,False
+TXN_202406_000428,2025-04-02,2025-04-02 19:01:17,70.93,EUR,CONTACTLESS,False,foreign exchange,foreignexchange bill berlin berlin,Other,19,2,False,False,False,False,False
+TXN_202406_000429,2025-04-29,2025-04-29 02:46:28,519.89,EUR,CONTACTLESS,False,wise transfer,berlin us wise transfer wise transfer topup,Other,2,1,False,True,False,False,False
+TXN_202406_000430,2025-04-05,2025-04-05 03:38:33,120.91,EUR,CONTACTLESS,True,pharmacy plus,de dd topup kiosk pharmacy plus,Healthcare,3,5,True,True,False,False,False
+TXN_202406_000431,2025-04-08,2025-04-08 18:31:54,34.05,EUR,CARD,False,bakery house,bakery house ie,Food,18,1,False,False,False,False,True
+TXN_202406_000432,2025-04-22,2025-04-22 01:45:21,488.58,EUR,TRANSFER,False,uniqlo,fr london topup uniqlo,Shopping,1,1,False,True,False,False,False
+TXN_202406_000433,2025-04-15,2025-04-15 11:23:27,37.92,EUR,CARD,False,tk maxx,tk maxx delivery galway irl txn,Shopping,11,1,False,False,False,False,False
+TXN_202406_000434,2025-04-01,2025-04-01 08:22:19,4.87,EUR,TRANSFER,True,bakery house,bakery house in store settlement paris delivery transfer,Food,8,1,False,False,False,False,False
+TXN_202406_000435,2025-04-15,2025-04-15 21:59:24,241.39,EUR,CONTACTLESS,False,wise transfer,de trip direct direct wisetransfer,Other,21,1,False,False,False,False,False
+TXN_202406_000436,2025-04-03,2025-04-03 05:12:27,282.64,EUR,CONTACTLESS,False,decathlon,kiosk es dublin decathlon,Shopping,5,3,False,True,False,False,False
+TXN_202406_000437,2025-04-26,2025-04-26 09:56:52,84.1,EUR,CARD,False,west market co,settlement booking west market co merchant,Entertainment,9,5,True,False,True,True,True
+TXN_202406_000438,2025-04-27,2025-04-27 04:36:16,357.78,EUR,TRANSFER,False,odeon cinema,odeon cinema,Entertainment,4,6,True,True,True,False,False
+TXN_202406_000439,2025-04-14,2025-04-14 20:28:16,83.46,EUR,ONLINE,False,city hospital,so commission paris city hospital so,Healthcare,20,0,False,False,False,False,True
+TXN_202406_000440,2025-04-05,2025-04-05 04:20:44,381.08,EUR,CARD,False,apple store,pur apple store berlin vlomkxro,Shopping,4,5,True,True,False,False,True
+TXN_202406_000441,2025-04-02,2025-04-02 03:34:05,35.7,EUR,CONTACTLESS,False,north market group,cork delivery delivery north market group irl commission,Entertainment,3,2,False,True,True,False,True
+TXN_202406_000442,2025-04-26,2025-04-26 17:56:32,53.35,EUR,CARD,False,wendys,wendys bill galway uk,Food,17,5,True,False,False,False,False
+TXN_202406_000443,2025-04-12,2025-04-12 00:24:50,259.13,EUR,ONLINE,False,electric ireland,electric ireland uk,Bills,0,5,True,True,False,False,False
+TXN_202406_000444,2025-04-07,2025-04-07 01:00:40,116.04,EUR,TRANSFER,False,new travel co,transfer newtravelco booking limerick irl irl,Transport,1,0,False,True,False,False,True
+TXN_202406_000445,2025-04-24,2025-04-24 06:31:54,24.53,EUR,TRANSFER,False,five guys,mobile five guys trip txn txn,Food,6,3,False,False,False,False,True
+TXN_202406_000446,2025-04-15,2025-04-15 05:10:11,471.34,EUR,CARD,False,ikea,dublin nl booking dd ikea txn,Shopping,5,1,False,True,False,False,False
+TXN_202406_000447,2025-04-12,2025-04-12 13:16:55,145.19,EUR,CARD,False,amazon,amazon,Shopping,13,5,True,False,False,False,False
+TXN_202406_000448,2025-04-11,2025-04-11 08:36:04,162.77,EUR,CONTACTLESS,False,gp consult,mobile gp consult bill ie,Healthcare,8,4,False,False,False,True,False
+TXN_202406_000449,2025-04-10,2025-04-10 11:08:02,387.44,EUR,CARD,False,stationery mart,stationery mart paris uk,Shopping,11,3,False,False,False,False,False
+TXN_202406_000450,2025-04-07,2025-04-07 12:12:41,156.45,EUR,TRANSFER,False,medical clinic,medical clinic madrid dublin,Healthcare,12,0,False,False,False,False,False
+TXN_202406_000451,2025-04-20,2025-04-20 13:44:14,641.34,EUR,CARD,False,south electrics group,dublin south electrics group,Bills,13,6,True,False,True,False,True
+TXN_202406_000452,2025-04-25,2025-04-25 01:25:15,38.24,EUR,ONLINE,False,ticketmaster,ticketmaster commission,Entertainment,1,4,False,True,False,False,False
+TXN_202406_000453,2025-04-06,2025-04-06 21:17:38,693.35,EUR,TRANSFER,False,payment adjustment,galway web complete paymentadjustment trip,Other,21,6,True,False,False,False,False
+TXN_202406_000454,2025-04-16,2025-04-16 13:15:01,652.21,EUR,CARD,False,cash withdrawal,cashwithdrawal topup cashwithdrawal,Other,13,2,False,False,False,False,False
+TXN_202406_000455,2025-04-21,2025-04-21 11:25:16,3.06,EUR,CARD,False,bakery house,trip bakery house london,Food,11,0,False,False,False,False,False
+TXN_202406_000456,2025-04-11,2025-04-11 19:09:44,307.09,EUR,TRANSFER,False,cash withdrawal,cash withdrawal,Other,19,4,False,False,False,False,False
+TXN_202406_000457,2025-04-25,2025-04-25 05:59:50,136.98,EUR,ONLINE,False,insurance premium,direct insurance premium fr,Bills,5,4,False,True,False,False,False
+TXN_202406_000458,2025-04-01,2025-04-01 10:55:47,231.68,EUR,CONTACTLESS,False,water charges,water charges ie ie berlin,Bills,10,1,False,False,False,False,False
+TXN_202406_000459,2025-04-30,2025-04-30 15:58:04,752.24,EUR,CONTACTLESS,False,bank fee,bank bill madrid nl nl,Other,15,2,False,False,False,False,False
+TXN_202406_000460,2025-04-02,2025-04-02 18:32:15,45.64,EUR,CONTACTLESS,False,nandos,nando's txn topup dd,Food,18,2,False,False,False,False,False
+TXN_202406_000461,2025-04-04,2025-04-04 03:40:43,20.99,EUR,ONLINE,False,dominos,mobile dominos galway,Food,3,4,False,True,False,False,False
+TXN_202406_000462,2025-04-17,2025-04-17 15:24:59,219.57,EUR,TRANSFER,False,ikea,transfer ikea nl nl,Shopping,15,3,False,False,False,False,False
+TXN_202406_000463,2025-04-16,2025-04-16 20:49:04,281.01,EUR,CARD,False,payment adjustment,adjustment merchant,Other,20,2,False,False,False,False,False
+TXN_202406_000464,2025-04-04,2025-04-04 23:13:13,248.33,EUR,CONTACTLESS,False,the home store,nl the home store direct trip,Shopping,23,4,False,False,False,False,False
+TXN_202406_000465,2025-04-14,2025-04-14 01:15:59,392.91,EUR,TRANSFER,True,boots retail,boots retail de,Shopping,1,0,False,True,False,False,True
+TXN_202406_000466,2025-04-14,2025-04-14 01:02:04,77.55,EUR,CARD,False,esso,app esso,Transport,1,0,False,True,False,False,False
+TXN_202406_000467,2025-04-11,2025-04-11 01:33:11,263.76,EUR,TRANSFER,False,vodafone,direct cork es vodafone,Bills,1,4,False,True,True,False,False
+TXN_202406_000468,2025-04-10,2025-04-10 05:49:48,736.89,EUR,TRANSFER,False,the diner group,the diner group merchant,Other,5,3,False,True,False,False,True
+TXN_202406_000469,2025-04-15,2025-04-15 06:29:40,745.29,EUR,CONTACTLESS,False,eir,eir booking fr,Bills,6,1,False,False,True,False,False
+TXN_202406_000470,2025-04-09,2025-04-09 18:44:09,81.59,EUR,CARD,True,gas bill,gas bill order es kiosk,Bills,18,2,False,False,False,False,False
+TXN_202406_000471,2025-04-09,2025-04-09 13:27:53,30.52,EUR,CARD,False,cinema world,transfer cinema world order galway es ie,Entertainment,13,2,False,False,False,False,False
+TXN_202406_000472,2025-04-19,2025-04-19 18:53:53,17.27,EUR,TRANSFER,False,playstation,app playstation irl orlewuhdr app,Entertainment,18,5,True,False,False,False,True
+TXN_202406_000473,2025-04-08,2025-04-08 21:31:24,24.18,EUR,ONLINE,False,west pharmacy co,pur app westpharmacyco uk westpharmacyco,Food,21,1,False,False,False,False,True
+TXN_202406_000474,2025-04-03,2025-04-03 14:14:52,51.38,EUR,TRANSFER,False,burger king,so burger king bill commission xsgaufpgwn xsgaufpgwn,Food,14,3,False,False,False,False,False
+TXN_202406_000475,2025-04-09,2025-04-09 04:08:58,262.8,EUR,CARD,False,tv license,mobile tv license,Bills,4,2,False,True,False,False,False
+TXN_202406_000476,2025-04-05,2025-04-05 06:17:55,117.71,EUR,CONTACTLESS,False,asos,paris asos,Shopping,6,5,True,False,False,False,False
+TXN_202406_000477,2025-04-12,2025-04-12 10:00:59,84.86,EUR,CARD,False,apple store,fr berlin apple store,Shopping,10,5,True,False,False,False,False
+TXN_202406_000478,2025-04-29,2025-04-29 09:56:49,63.76,EUR,TRANSFER,False,urban electrics ltd,urban electrics ltd limerick,Transport,9,1,False,False,False,False,True
+TXN_202406_000479,2025-04-27,2025-04-27 04:39:05,66.57,EUR,CARD,False,nike,nike,Shopping,4,6,True,True,False,False,False
+TXN_202406_000480,2025-04-21,2025-04-21 17:12:09,956.43,EUR,CARD,True,asos,direct app asos uk commission,Shopping,17,0,False,False,False,False,False
+TXN_202406_000481,2025-04-16,2025-04-16 21:58:55,75.17,EUR,TRANSFER,False,arcade,txn app arcade cork,Entertainment,21,2,False,False,False,False,True
+TXN_202406_000482,2025-04-06,2025-04-06 14:51:10,424.64,EUR,CONTACTLESS,False,ikea,ikea us,Shopping,14,6,True,False,False,False,False
+TXN_202406_000483,2025-04-12,2025-04-12 12:04:12,176.21,EUR,CARD,False,card verification,verification topup,Other,12,5,True,False,False,False,False
+TXN_202406_000484,2025-04-23,2025-04-23 11:33:41,596.46,EUR,CARD,False,cash withdrawal,cash withdrawal topup cork es settlement cash withdrawal settlement,Other,11,2,False,False,False,False,False
+TXN_202406_000485,2025-04-21,2025-04-21 17:31:44,117.46,EUR,CARD,False,electric ireland,electricireland london ie,Bills,17,0,False,False,False,False,False
+TXN_202406_000486,2025-04-11,2025-04-11 11:55:50,371.5,EUR,CARD,False,atm withdrawal,atm withdrawal uk in store trip,Other,11,4,False,False,False,False,False
+TXN_202406_000487,2025-04-01,2025-04-01 06:52:08,61.84,EUR,CARD,True,epic games,app epic games booking epic games epic games,Entertainment,6,1,False,False,False,False,False
+TXN_202406_000488,2025-04-03,2025-04-03 09:21:53,73.31,EUR,ONLINE,False,uniqlo,dd uniqlo madrid irl,Shopping,9,3,False,False,False,False,False
+TXN_202406_000489,2025-04-05,2025-04-05 20:32:06,641.48,EUR,CARD,False,the diner services,merchant limerick merchant the diner services order,Other,20,5,True,False,False,True,True
+TXN_202406_000490,2025-04-10,2025-04-10 01:27:09,187.45,EUR,ONLINE,True,penneys,direct penneys berlin,Shopping,1,3,False,True,False,False,False
+TXN_202406_000491,2025-04-28,2025-04-28 19:08:32,44.74,EUR,CONTACTLESS,False,bakery house,standing order bakery house booking ie irl,Food,19,0,False,False,False,False,False
+TXN_202406_000492,2025-04-13,2025-04-13 07:57:43,302.01,EUR,CONTACTLESS,False,new clinic ltd,dublin new clinic ltd us cork,Bills,7,6,True,False,False,False,True
+TXN_202406_000493,2025-04-09,2025-04-09 12:37:24,33.21,EUR,TRANSFER,True,juice bar,irl juicebar galway topup so,Food,12,2,False,False,False,False,False
+TXN_202406_000494,2025-04-09,2025-04-09 14:59:00,763.99,EUR,ONLINE,False,chargeback,paris chargeback pur,Other,14,2,False,False,False,False,False
+TXN_202406_000495,2025-04-09,2025-04-09 14:50:02,76.51,EUR,CARD,False,the pharmacy ireland,the pharmacy ireland trip commission,Food,14,2,False,False,True,False,True
+TXN_202406_000496,2025-04-29,2025-04-29 16:27:07,11.49,EUR,CONTACTLESS,False,odeon cinema,dublin standing order standing order odeon cinema mobile,Entertainment,16,1,False,False,False,False,False
+TXN_202406_000497,2025-04-21,2025-04-21 09:35:08,3.49,EUR,CONTACTLESS,True,nandos,app nando's limerick,Food,9,0,False,False,False,False,False
+TXN_202406_000498,2025-04-16,2025-04-16 15:13:59,59.43,EUR,TRANSFER,False,broadband bill,broadband bill commission in store,Bills,15,2,False,False,False,False,False
+TXN_202406_000499,2025-04-25,2025-04-25 05:26:14,96.59,EUR,ONLINE,False,broadband bill,broadband bill booking berlin gkehjo,Bills,5,4,False,True,False,False,False
+TXN_202406_000500,2025-04-25,2025-04-25 06:32:55,186.58,EUR,ONLINE,False,eir,eir dqqxiuj irl dublin,Bills,6,4,False,False,False,False,False

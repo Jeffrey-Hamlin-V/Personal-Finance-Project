@@ -15,7 +15,8 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from api.routes import router
+from api.routes import router as api_router  # Existing routes
+from api.auth_routes import router as auth_router  # NEW - Auth routes
 from database import init_database
 
 # Configure logging
@@ -137,8 +138,9 @@ async def shutdown_event():
 # ROUTES
 # ==================
 
-# Include API routes
-app.include_router(router, prefix="/api", tags=["API"])
+# Include routers
+app.include_router(auth_router, prefix="/api")  # NEW - Authentication routes
+app.include_router(api_router, prefix="/api", tags=["API"])  # Existing routes
 
 # Health check endpoint
 @app.get("/", tags=["Health"])

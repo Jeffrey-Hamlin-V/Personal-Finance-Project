@@ -16,13 +16,13 @@ from typing import Dict, List, Tuple
 # CONFIG
 # =========================
 RANDOM_SEED = 42
-NUM_RECORDS = 10_000
+NUM_RECORDS = 500
 
 # Exactly one-month window (inclusive)
-MONTH_START = datetime(2024, 6, 1)
-MONTH_END = datetime(2024, 6, 30)
+MONTH_START = datetime(2025, 4, 1)
+MONTH_END = datetime(2025, 4, 30)
 
-OUTPUT_FILE = "synthetic_transactions.csv"
+OUTPUT_FILE = "Data5.csv"
 
 CURRENCIES = ["EUR"]  # keep simple; can extend later if needed
 PAYMENT_METHODS = ["CARD", "CONTACTLESS", "ONLINE", "TRANSFER"]

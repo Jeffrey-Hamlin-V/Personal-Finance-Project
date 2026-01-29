@@ -54,6 +54,7 @@ class TransactionBase(BaseModel):
     currency: str = "EUR"
     merchant: str
     category: str
+    timestamp: datetime
     payment_method: Optional[str] = None
     is_credit: bool = False
 
@@ -76,6 +77,7 @@ class TransactionResponse(TransactionBase):
     
     # Time features
     hour_of_day: Optional[int] = None
+    day_of_week: Optional[int] = None
     is_weekend: bool = False
     is_night: bool = False
     
@@ -117,6 +119,7 @@ class UploadStatusResponse(BaseModel):
     categorization_completed: bool
     anomaly_detection_completed: bool
     progress_pct: float
+    error_message: Optional[str] = None
 
 
 # ==================
