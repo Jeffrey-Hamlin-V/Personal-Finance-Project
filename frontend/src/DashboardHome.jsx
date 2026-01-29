@@ -57,6 +57,30 @@ function DashboardHome({ setCurrentPage }) {
     setCurrentPage('d3-dashboard');
   };
 
+  const handleClearHistory = async () => {
+    const confirmed = window.confirm(
+      "Are you sure you want to clear your entire transaction history? This action cannot be undone."
+    );
+
+    if (!confirmed) return;
+
+    try {
+      const response = await fetch(`http://localhost:8000/api/transactions/clear?user_id=${userId}`, {
+        method: 'DELETE'
+      });
+
+      if (response.ok) {
+        alert('Your history has been cleared. You can now upload a fresh dataset.');
+      } else {
+        const data = await response.json();
+        alert(`Failed to clear history: ${data.detail}`);
+      }
+    } catch (error) {
+      console.error('Clear history error:', error);
+      alert('Failed to clear history. Please try again.');
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem('user_id');
     localStorage.removeItem('email');
@@ -92,6 +116,12 @@ function DashboardHome({ setCurrentPage }) {
             <h3>Use Existing Data</h3>
             <p>Continue with your previously uploaded financial data</p>
           </div>
+
+          <div className="option-card delete-card" onClick={handleClearHistory}>
+            <div className="option-icon">🗑️</div>
+            <h3>Clear My History</h3>
+            <p>Delete all your data and start fresh with a new dataset</p>
+          </div>
         </div>
       </div>
 
@@ -101,10 +131,10 @@ function DashboardHome({ setCurrentPage }) {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h3>Upload CSV File</h3>
             <div className="upload-area">
-              <input 
-                type="file" 
-                accept=".csv" 
-                id="csv-upload" 
+              <input
+                type="file"
+                accept=".csv"
+                id="csv-upload"
                 onChange={handleFileSelect}
                 disabled={uploading}
               />
@@ -121,8 +151,8 @@ function DashboardHome({ setCurrentPage }) {
               <button onClick={() => setShowUploadModal(false)} disabled={uploading}>
                 Cancel
               </button>
-              <button 
-                className="primary-btn" 
+              <button
+                className="primary-btn"
                 onClick={handleUploadCSV}
                 disabled={!selectedFile || uploading}
               >

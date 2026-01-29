@@ -212,6 +212,34 @@ def get_transactions(
         raise HTTPException(status_code=500, detail=f"Error fetching transactions: {str(e)}")
 
 
+@router.delete("/transactions/clear", tags=["Transactions"])
+def clear_transactions(
+    user_id: str = Query(...),
+    db: Session = Depends(get_db)
+):
+    """
+    Clear all transactions, uploads, and insights for a user.
+    Allows for a fresh start with new data.
+    """
+    try:
+        # Delete transactions first
+        db.query(Transaction).filter(Transaction.user_id == user_id).delete()
+        
+        # Delete uploads
+        db.query(Upload).filter(Upload.user_id == user_id).delete()
+        
+        # Delete insights
+        db.query(Insight).filter(Insight.user_id == user_id).delete()
+        
+        db.commit()
+        logger.info(f"🗑️ Cleared all data for user {user_id}")
+        return {"success": True, "message": "All transaction history has been cleared."}
+    except Exception as e:
+        db.rollback()
+        logger.error(f"Error clearing data for user {user_id}: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error clearing data: {str(e)}")
+
+
 @router.get("/transactions/{transaction_id}", response_model=TransactionResponse, tags=["Transactions"])
 def get_transaction(transaction_id: str, db: Session = Depends(get_db)):
     """Get single transaction by ID"""
