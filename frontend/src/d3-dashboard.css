@@ -177,10 +177,10 @@ select {
 /* tables */
 
 .tables-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-  height: 100%;
+  display: block;
+  flex: 1;
+  min-height: 0;
+  margin-top: 4px;
 }
 
 .table-block {
@@ -340,4 +340,36 @@ select {
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
+}
+
+/* toggle */
+.toggle-container {
+  display: flex;
+  background: var(--bg-color);
+  border-radius: 8px;
+  padding: 3px;
+  border: 1px solid var(--card-border);
+}
+
+.toggle-btn {
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--muted-text);
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background: var(--accent-1);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn:hover:not(.active) {
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.05);
 }

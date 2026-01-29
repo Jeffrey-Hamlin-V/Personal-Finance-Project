@@ -5,28 +5,58 @@ import './d3-dashboard.css';
 function D3Dashboard({ setCurrentPage }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+  const [processing, setProcessing] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
+  const [tableFilter, setTableFilter] = useState('highest'); // New state for table toggle
+  const MAX_RETRIES = 5;
+  const RETRY_DELAY = 3000; // 3 seconds
+
   const userId = localStorage.getItem('user_id');
 
   useEffect(() => {
     fetchTransactions();
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
     if (data.length > 0) {
       initializeDashboard(data);
     }
-  }, [data]);
+  }, [data, tableFilter]); // Re-run when toggle changes
 
-  const fetchTransactions = async () => {
+  // Polling effect - handles retries correctly without closure issues
+  useEffect(() => {
+    let timer;
+    if (processing && retryCount < MAX_RETRIES && data.length === 0) {
+      timer = setTimeout(() => {
+        fetchTransactions(true);
+      }, RETRY_DELAY);
+    } else if (retryCount >= MAX_RETRIES) {
+      setProcessing(false);
+      setLoading(false);
+    }
+    return () => clearTimeout(timer);
+  }, [processing, retryCount, data.length]);
+
+  const fetchTransactions = async (isRetry = false) => {
+    if (!isRetry) {
+      setLoading(true);
+      setRetryCount(0);
+      setProcessing(false);
+    }
+
     try {
       const response = await fetch(`http://localhost:8000/api/transactions?user_id=${userId}&page_size=1000`);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const result = await response.json();
-      
-      if (response.ok && result.transactions.length > 0) {
+
+      if (result.transactions && result.transactions.length > 0) {
         const transformedData = result.transactions.map(txn => ({
           transaction_id: txn.transaction_id,
-          timestamp: formatTimestamp(txn.transaction_date),
+          timestamp: txn.timestamp, // Use full timestamp from backend
           amount: txn.amount,
           category: txn.category || 'Other',
           merchant: txn.merchant || '',
@@ -34,12 +64,27 @@ function D3Dashboard({ setCurrentPage }) {
 
         setData(transformedData);
         setLoading(false);
+        setProcessing(false);
       } else {
-        setLoading(false);
+        // No data yet, might be processing
+        if (isRetry || retryCount < MAX_RETRIES) {
+          setProcessing(true);
+          setLoading(false);
+          if (isRetry) setRetryCount(prev => prev + 1);
+        } else {
+          setLoading(false);
+          setProcessing(false);
+        }
       }
     } catch (error) {
       console.error('Error fetching transactions:', error);
-      setLoading(false);
+      if (retryCount < MAX_RETRIES) {
+        setProcessing(true);
+        if (isRetry) setRetryCount(prev => prev + 1);
+      } else {
+        setLoading(false);
+        setProcessing(false);
+      }
     }
   };
 
@@ -86,16 +131,13 @@ function D3Dashboard({ setCurrentPage }) {
 
   function parseTimestamp(ts) {
     if (!ts) return null;
-    const parts = ts.split(" ");
-    if (parts.length < 2) return null;
-    const [dateStr, timeStr] = parts;
-    const [d, m, y] = dateStr.split("-").map(Number);
-    const [H, M] = timeStr.split(":").map(Number);
-    const dateObj = new Date(y, m - 1, d, H, M);
+    const dateObj = new Date(ts);
+    if (isNaN(dateObj.getTime())) return null;
+
     return {
       full: dateObj,
-      date: new Date(y, m - 1, d),
-      time: { hour: H, minute: M }
+      date: new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate()),
+      time: { hour: dateObj.getHours(), minute: dateObj.getMinutes() }
     };
   }
 
@@ -265,17 +307,36 @@ function D3Dashboard({ setCurrentPage }) {
     svg.append("g").attr("transform", `translate(0,${height - margin.bottom})`).call(d3.axisBottom(x).ticks(4).tickFormat(d3.timeFormat("%d-%m")));
     svg.append("g").attr("transform", `translate(${margin.left},0)`).call(d3.axisLeft(y).ticks(4));
 
+    const tooltip = makeTooltip(container);
+
     function renderScatter(filterCat) {
       const filtered = filterCat && filterCat !== "All" ? data.filter(d => d.category === filterCat) : data;
+
+      // Add a small jitter to y and x to prevent overlapping points in a single line
+      const jitterAmount = 4;
+
       svg.selectAll("circle.point").data(filtered, d => d.transaction_id)
         .join("circle")
         .attr("class", "point")
-        .attr("cx", d => x(d.parsedTime.full))
-        .attr("cy", d => y(d.amountNum))
-        .attr("r", 2.8)
-        .attr("fill", "rgba(234, 179, 8, 0.6)")
+        .attr("cx", d => x(d.parsedTime.full) + (Math.random() - 0.5) * 2)
+        .attr("cy", d => y(d.amountNum) + (Math.random() - 0.5) * jitterAmount)
+        .attr("r", 3.2)
+        .attr("fill", "rgba(59, 130, 246, 0.6)") // Switched to theme blue
         .attr("stroke", "#0f172a")
-        .attr("stroke-width", 0.6);
+        .attr("stroke-width", 0.8)
+        .on("mouseover", function (event, d) {
+          d3.select(this).attr("r", 5).attr("fill", "rgba(59, 130, 246, 1)");
+          tooltip.style("display", "block").html(
+            `<strong>${d.merchant}</strong><br>€${d.amountNum.toFixed(2)} · ${d.category}<br>${d3.timeFormat("%d-%m-%Y %H:%M")(d.parsedTime.full)}`
+          );
+        })
+        .on("mousemove", function (event) {
+          tooltip.style("left", event.offsetX + 12 + "px").style("top", event.offsetY + 12 + "px");
+        })
+        .on("mouseout", function () {
+          d3.select(this).attr("r", 3.2).attr("fill", "rgba(59, 130, 246, 0.6)");
+          tooltip.style("display", "none");
+        });
     }
 
     renderScatter("All");
@@ -286,8 +347,7 @@ function D3Dashboard({ setCurrentPage }) {
     const sortedAsc = [...data].sort((a, b) => d3.ascending(a.amountNum, b.amountNum));
     const sortedDesc = [...data].sort((a, b) => d3.descending(a.amountNum, b.amountNum));
 
-    fillTable("#topTable tbody", sortedDesc.slice(0, 10));
-    fillTable("#lowTable tbody", sortedAsc.slice(0, 10));
+    fillTable("#dynamicTable tbody", tableFilter === 'highest' ? sortedDesc.slice(0, 10) : sortedAsc.slice(0, 10));
   }
 
   function fillTable(selector, rowsData) {
@@ -305,8 +365,9 @@ function D3Dashboard({ setCurrentPage }) {
   function buildAnomalies(data) {
     const mean = d3.mean(data, d => d.amountNum);
     const sd = d3.deviation(data, d => d.amountNum) || 0;
-    const threshold = mean + 2 * sd;
-    const anomalies = data.filter(d => d.amountNum > threshold);
+    const threshold = mean + 3 * sd; // Stricter threshold (3-sigma)
+    const anomalies = data.filter(d => d.amountNum > threshold)
+      .sort((a, b) => d3.descending(a.amountNum, b.amountNum));
 
     d3.select("#anomalyMeta").text(
       anomalies.length ? `Threshold: €${threshold.toFixed(2)} · Found ${anomalies.length}` : "No strong outliers found"
@@ -320,10 +381,10 @@ function D3Dashboard({ setCurrentPage }) {
       return;
     }
 
-    list.selectAll(".anomaly-item").data(anomalies.sort((a, b) => d3.descending(a.amountNum, b.amountNum)))
+    list.selectAll(".anomaly-item").data(anomalies.slice(0, 3)) // Show only top 3
       .join("div").attr("class", "anomaly-item")
       .html(d => `
-        <div><span class="anomaly-tag">High spend</span> · €${d.amountNum.toFixed(2)}</div>
+        <div><span class="anomaly-tag">Critical outlier</span> · €${d.amountNum.toFixed(2)}</div>
         <div>${d3.timeFormat("%d-%m-%Y %H:%M")(d.parsedTime.full)} · ${d.merchant} · ${d.category}</div>
       `);
   }
@@ -336,11 +397,12 @@ function D3Dashboard({ setCurrentPage }) {
     return div;
   }
 
-  if (loading) {
+  if (loading || (processing && data.length === 0)) {
     return (
       <div className="d3-loading">
         <div className="spinner"></div>
-        <p>Loading your dashboard...</p>
+        <p>{processing ? `Still processing your data... (Attempt ${retryCount}/${MAX_RETRIES})` : 'Loading your dashboard...'}</p>
+        <button onClick={handleBack} style={{ marginTop: '10px', background: '#374151' }}>Cancel</button>
       </div>
     );
   }
@@ -349,8 +411,11 @@ function D3Dashboard({ setCurrentPage }) {
     return (
       <div className="d3-loading">
         <h2>No Data Available</h2>
-        <p>Upload a CSV to see your dashboard</p>
-        <button onClick={handleBack}>Go Back</button>
+        <p>We couldn't find any transaction data for your account.</p>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button onClick={handleBack}>Go Back</button>
+          <button onClick={() => fetchTransactions()} style={{ background: '#3b82f6', color: 'white' }}>Refresh</button>
+        </div>
       </div>
     );
   }
@@ -401,7 +466,7 @@ function D3Dashboard({ setCurrentPage }) {
           </div>
           <div className="controls">
             <label>
-              <span style={{marginRight: '4px'}}>Category:</span>
+              <span style={{ marginRight: '4px' }}>Category:</span>
               <select id="scatterCategorySelect">
                 <option value="All">All</option>
               </select>
@@ -412,20 +477,25 @@ function D3Dashboard({ setCurrentPage }) {
 
         <div className="card card-top">
           <div className="card-header">
-            <div className="card-title">Top & lowest transactions</div>
-            <div className="card-meta">Top 10 highest · 10 lowest</div>
+            <div className="card-title">Transaction Rankings</div>
+            <div className="toggle-container">
+              <button
+                className={`toggle-btn ${tableFilter === 'highest' ? 'active' : ''}`}
+                onClick={() => setTableFilter('highest')}
+              >
+                Highest
+              </button>
+              <button
+                className={`toggle-btn ${tableFilter === 'lowest' ? 'active' : ''}`}
+                onClick={() => setTableFilter('lowest')}
+              >
+                Lowest
+              </button>
+            </div>
           </div>
           <div className="tables-wrapper">
             <div className="table-block">
-              <div className="table-title">Top 10 highest</div>
-              <table className="table" id="topTable">
-                <thead><tr><th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Time</th></tr></thead>
-                <tbody></tbody>
-              </table>
-            </div>
-            <div className="table-block">
-              <div className="table-title">Top 10 lowest</div>
-              <table className="table" id="lowTable">
+              <table className="table" id="dynamicTable">
                 <thead><tr><th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Time</th></tr></thead>
                 <tbody></tbody>
               </table>

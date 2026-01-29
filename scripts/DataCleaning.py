@@ -6,8 +6,8 @@ from datetime import datetime
 # CONFIG
 # =========================
 
-INPUT_FILE = "trial2.csv"
-OUTPUT_FILE = "trial2clean.csv"
+INPUT_FILE = "Data5.csv"
+OUTPUT_FILE = "Test5.csv"
 
 # Tokens commonly found in bank statements that add no semantic value
 NOISE_TOKENS = {

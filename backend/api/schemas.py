@@ -54,6 +54,7 @@ class TransactionBase(BaseModel):
     currency: str = "EUR"
     merchant: str
     category: str
+    timestamp: datetime
     payment_method: Optional[str] = None
     is_credit: bool = False
 

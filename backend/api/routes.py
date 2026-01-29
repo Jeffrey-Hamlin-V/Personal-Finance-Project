@@ -66,8 +66,20 @@ async def upload_transactions(
         df = pd.read_csv(pd.io.common.BytesIO(contents))
         
         # Validate required columns
-        required_cols = ['transaction_id', 'transaction_date', 'amount', 'merchant', 'clean_description']
+        required_cols = ['transaction_id', 'transaction_date', 'amount', 'merchant']
         missing = set(required_cols) - set(df.columns)
+        
+        # Check for description column (can be 'clean_description' or 'description')
+        desc_col = None
+        if 'clean_description' in df.columns:
+            desc_col = 'clean_description'
+        elif 'description' in df.columns:
+            desc_col = 'description'
+            # Rename for consistency or just handle it
+            df['clean_description'] = df['description']
+        else:
+            missing.add('clean_description')
+
         if missing:
             raise HTTPException(
                 status_code=400, 
@@ -610,21 +622,25 @@ def process_upload(upload_id: str, df: pd.DataFrame, user_id: str):
                     saved_count = 0
                     for txn in transactions:
                         try:
-                            # Check if it exists again (might have been added by another process)
-                            exists = db.query(Transaction).filter(
-                                Transaction.transaction_id == txn.transaction_id,
-                                Transaction.user_id == user_id
+                            # Check if it exists at all
+                            exists_global = db.query(Transaction).filter(
+                                Transaction.transaction_id == txn.transaction_id
                             ).first()
                             
-                            if exists:
-                                skipped_duplicates += 1
-                                continue
+                            if exists_global:
+                                if exists_global.user_id == user_id:
+                                    skipped_duplicates += 1
+                                    continue
+                                else:
+                                    # Clash with another user! Generate a unique ID for this user
+                                    txn.transaction_id = f"{txn.transaction_id}_{user_id[:8]}"
                             
                             db.add(txn)
                             db.commit()
                             saved_count += 1
                         except IntegrityError as e:
                             db.rollback()
+                            # If still clashing after prefixing, skip it
                             skipped_duplicates += 1
                             logger.warning(f"⚠️  Skipped duplicate transaction_id: {txn.transaction_id}")
                         except Exception as e:
